@@ -1,0 +1,143 @@
+{
+  "categories": [
+    {
+      "name": "Programming",
+      "icon": "💻",
+      "skills": [
+        {"name": "Python", "evidence": "project_demonstrated", "projects": []},
+        {"name": "SQL", "evidence": "project_demonstrated", "projects": ["Customer Churn Prediction", "Retail Data Warehouse Analytics", "HR Analytics Dashboard", "Sales BI Dashboard"]},
+        {"name": "Git & GitHub", "evidence": "project_demonstrated", "projects": []}
+      ]
+    },
+    {
+      "name": "Mathematics & Statistics",
+      "icon": "📐",
+      "skills": [
+        {"name": "Probability & Statistics", "evidence": "technical_knowledge", "projects": []},
+        {"name": "Linear Algebra", "evidence": "technical_knowledge", "projects": []},
+        {"name": "Statistical Hypothesis Testing", "evidence": "technical_knowledge", "projects": []}
+      ]
+    },
+    {
+      "name": "Data Analytics",
+      "icon": "📊",
+      "skills": [
+        {"name": "Pandas", "evidence": "project_demonstrated", "projects": ["Customer Segmentation", "Market Basket Analysis", "Retail Data Warehouse Analytics"]},
+        {"name": "NumPy", "evidence": "project_demonstrated", "projects": []},
+        {"name": "Exploratory Data Analysis (EDA)", "evidence": "project_demonstrated", "projects": ["Customer Churn Prediction", "Hospital Readmissions", "Fraud Detection"]},
+        {"name": "Data Preprocessing", "evidence": "project_demonstrated", "projects": []},
+        {"name": "Feature Engineering", "evidence": "project_demonstrated", "projects": ["Retail Data Warehouse Analytics", "Insurance Cross-Sell"]},
+        {"name": "Excel", "evidence": "technical_knowledge", "projects": []}
+      ]
+    },
+    {
+      "name": "Databases",
+      "icon": "🗄️",
+      "skills": [
+        {"name": "MySQL", "evidence": "technical_knowledge", "projects": []},
+        {"name": "MongoDB", "evidence": "project_demonstrated", "projects": ["Insurance Cross-Sell NoSQL Analytics"]},
+        {"name": "SQLite", "evidence": "project_demonstrated", "projects": ["Retail Data Warehouse Analytics", "Customer Churn Prediction", "HR Analytics Dashboard"]},
+        {"name": "DuckDB", "evidence": "project_demonstrated", "projects": ["Sales BI Dashboard"]}
+      ]
+    },
+    {
+      "name": "Machine Learning",
+      "icon": "🤖",
+      "skills": [
+        {"name": "Scikit-learn", "evidence": "project_demonstrated", "projects": ["Fraud Detection", "Customer Segmentation", "Retail Data Warehouse Analytics"]},
+        {"name": "XGBoost", "evidence": "project_demonstrated", "projects": ["Fraud Detection", "Hospital Readmissions", "Insurance Cross-Sell", "Customer Churn Prediction"]},
+        {"name": "CatBoost", "evidence": "project_demonstrated", "projects": ["Loan Default Predictor"]},
+        {"name": "Random Forest", "evidence": "project_demonstrated", "projects": ["Fraud Detection", "Retail Data Warehouse Analytics"]},
+        {"name": "K-Means", "evidence": "project_demonstrated", "projects": ["Customer Segmentation"]},
+        {"name": "DBSCAN", "evidence": "project_demonstrated", "projects": ["Customer Segmentation"]},
+        {"name": "Gaussian Mixture Models", "evidence": "project_demonstrated", "projects": ["Customer Segmentation"]},
+        {"name": "PCA", "evidence": "project_demonstrated", "projects": ["Customer Segmentation"]},
+        {"name": "Ensemble Learning", "evidence": "project_demonstrated", "projects": ["Fraud Detection", "Retail Data Warehouse Analytics"]},
+        {"name": "Recommendation Systems", "evidence": "project_demonstrated", "projects": ["Market Basket Analysis"]},
+        {"name": "Model Evaluation", "evidence": "project_demonstrated", "projects": []},
+        {"name": "Explainable AI (SHAP)", "evidence": "project_demonstrated", "projects": ["Student Academic Outcome Prediction", "Loan Default Predictor", "Retail Data Warehouse Analytics"]},
+        {"name": "Optuna (HPO)", "evidence": "project_demonstrated", "projects": ["Loan Default Predictor"]}
+      ]
+    },
+    {
+      "name": "Deep Learning",
+      "icon": "🧠",
+      "skills": [
+        {"name": "PyTorch", "evidence": "project_demonstrated", "projects": ["Animal-10 Classification", "Human Activity Recognition", "Electricity Forecasting RNN", "Student Academic Outcome Prediction"]},
+        {"name": "TensorFlow", "evidence": "technical_knowledge", "projects": []},
+        {"name": "MLP", "evidence": "project_demonstrated", "projects": ["Retail Demand Forecasting", "Student Academic Outcome Prediction"]},
+        {"name": "CNN", "evidence": "project_demonstrated", "projects": ["Animal-10 Classification"]},
+        {"name": "AlexNet", "evidence": "project_demonstrated", "projects": ["Animal-10 Classification"]},
+        {"name": "Residual MLP (ResMLP)", "evidence": "project_demonstrated", "projects": ["Human Activity Recognition"]},
+        {"name": "RNN", "evidence": "project_demonstrated", "projects": ["Electricity Consumption Forecasting RNN"]},
+        {"name": "LSTM", "evidence": "technical_knowledge", "projects": []},
+        {"name": "GRU", "evidence": "technical_knowledge", "projects": []},
+        {"name": "Autoencoders", "evidence": "technical_knowledge", "projects": []},
+        {"name": "Variational Autoencoders", "evidence": "technical_knowledge", "projects": []},
+        {"name": "Transformers", "evidence": "technical_knowledge", "projects": []},
+        {"name": "Transfer Learning", "evidence": "technical_knowledge", "projects": []},
+        {"name": "Computer Vision", "evidence": "project_demonstrated", "projects": ["Animal-10 Classification"]},
+        {"name": "NLP", "evidence": "technical_knowledge", "projects": []}
+      ]
+    },
+    {
+      "name": "Time Series",
+      "icon": "📈",
+      "skills": [
+        {"name": "Time Series Forecasting", "evidence": "project_demonstrated", "projects": ["Electricity Consumption Forecasting RNN", "Retail Demand Forecasting"]},
+        {"name": "RNN-based Forecasting", "evidence": "project_demonstrated", "projects": ["Electricity Consumption Forecasting RNN"]},
+        {"name": "Demand Forecasting", "evidence": "project_demonstrated", "projects": ["Retail Demand Forecasting"]}
+      ]
+    },
+    {
+      "name": "Generative AI",
+      "icon": "✨",
+      "skills": [
+        {"name": "LLMs", "evidence": "technical_knowledge", "projects": []},
+        {"name": "Embeddings", "evidence": "technical_knowledge", "projects": []},
+        {"name": "RAG", "evidence": "technical_knowledge", "projects": []},
+        {"name": "Vector Databases", "evidence": "technical_knowledge", "projects": []},
+        {"name": "LangChain", "evidence": "technical_knowledge", "projects": []},
+        {"name": "Agentic AI", "evidence": "technical_knowledge", "projects": []},
+        {"name": "Generative AI Applications", "evidence": "project_demonstrated", "projects": ["Basic Chatbot Application", "Mini ChatGPT"]}
+      ]
+    },
+    {
+      "name": "MLOps",
+      "icon": "⚙️",
+      "skills": [
+        {"name": "MLflow", "evidence": "project_demonstrated", "projects": ["Electricity Consumption Forecasting RNN"]},
+        {"name": "DVC", "evidence": "technical_knowledge", "projects": []},
+        {"name": "Experiment Tracking", "evidence": "project_demonstrated", "projects": ["Electricity Consumption Forecasting RNN"]},
+        {"name": "Model Versioning", "evidence": "technical_knowledge", "projects": []},
+        {"name": "Reproducibility", "evidence": "project_demonstrated", "projects": ["Animal-10 Classification"]}
+      ]
+    },
+    {
+      "name": "Deployment & Engineering",
+      "icon": "🚀",
+      "skills": [
+        {"name": "Streamlit", "evidence": "project_demonstrated", "projects": ["Fraud Detection", "Customer Segmentation", "Loan Default Predictor", "HR Analytics Dashboard"]},
+        {"name": "Flask", "evidence": "project_demonstrated", "projects": ["Concrete Strength Predictor", "Student Performance Predictor"]},
+        {"name": "FastAPI", "evidence": "technical_knowledge", "projects": []},
+        {"name": "REST APIs", "evidence": "technical_knowledge", "projects": []},
+        {"name": "Docker", "evidence": "technical_knowledge", "projects": []},
+        {"name": "ONNX", "evidence": "project_demonstrated", "projects": ["Animal-10 Classification"]},
+        {"name": "Streamlit Community Cloud", "evidence": "project_demonstrated", "projects": ["Customer Churn Prediction", "Loan Default Predictor", "Insurance Cross-Sell", "Retail Data Warehouse Analytics"]},
+        {"name": "Render", "evidence": "project_demonstrated", "projects": ["Concrete Strength Predictor", "Student Performance Predictor"]}
+      ]
+    },
+    {
+      "name": "Visualization / BI",
+      "icon": "📉",
+      "skills": [
+        {"name": "Matplotlib", "evidence": "project_demonstrated", "projects": []},
+        {"name": "Seaborn", "evidence": "project_demonstrated", "projects": []},
+        {"name": "Plotly", "evidence": "project_demonstrated", "projects": ["HR Analytics Dashboard", "Sales BI Dashboard"]},
+        {"name": "Power BI", "evidence": "project_demonstrated", "projects": ["HR Analytics Dashboard", "Sales BI Dashboard"]},
+        {"name": "Tableau", "evidence": "technical_knowledge", "projects": []},
+        {"name": "Dashboard Development", "evidence": "project_demonstrated", "projects": ["HR Analytics Dashboard", "Sales BI Dashboard"]}
+      ]
+    }
+  ]
+}

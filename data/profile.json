@@ -1,0 +1,43 @@
+{
+  "name": "Gourav Chhatwani",
+  "professional_title": "Data Scientist | AI/ML Engineer",
+  "target_roles": [
+    "Data Scientist",
+    "Data Analyst",
+    "Machine Learning Engineer",
+    "AI Engineer",
+    "Generative AI Engineer"
+  ],
+  "summary": "Aspiring Data Scientist and AI Engineer with strong hands-on, end-to-end project experience spanning data analytics, machine learning, deep learning, computer vision, time-series forecasting, recommendation systems, MLOps, and deployment. I build production-oriented, modular AI applications — from exploratory data analysis and modeling to interactive Streamlit/Flask apps deployed in the cloud — with a focus on reproducible, explainable, and business-ready solutions.",
+  "email": "[ADD_EMAIL_PLACEHOLDER]",
+  "phone": "[ADD_PHONE_PLACEHOLDER]",
+  "location": "[ADD_CITY_STATE_COUNTRY_PLACEHOLDER]",
+  "github": "https://github.com/GouravGC",
+  "linkedin": "https://www.linkedin.com/in/gourav-chhatwani-9a301134a/",
+  "other_links": {},
+  "education": [
+    {
+      "degree": "[ADD_DEGREE_PLACEHOLDER]",
+      "field": "[ADD_FIELD_PLACEHOLDER]",
+      "institution": "[ADD_INSTITUTION_PLACEHOLDER]",
+      "location": "[ADD_LOCATION_PLACEHOLDER]",
+      "year_start": "[ADD_YEAR_PLACEHOLDER]",
+      "year_end": "[ADD_YEAR_PLACEHOLDER]",
+      "details": []
+    }
+  ],
+  "journey": [
+    "Python",
+    "Data Analytics",
+    "Mathematics & Statistics",
+    "Machine Learning",
+    "Deep Learning",
+    "Computer Vision / NLP",
+    "Time Series",
+    "MLOps & Deployment",
+    "Generative AI",
+    "Agentic AI"
+  ],
+  "journey_description": "A self-driven learning and project-development journey from Python fundamentals through data analytics, machine learning, deep learning, and modern AI engineering — culminating in production-oriented, end-to-end projects.",
+  "is_fresher": true
+}
