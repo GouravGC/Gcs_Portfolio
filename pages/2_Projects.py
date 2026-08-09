@@ -31,11 +31,10 @@ import streamlit as st
 from components.domain import (
     NAV_DOMAINS,
     PRIMARY_DOMAINS,
+    group_projects_by_taxonomy,
     render_domain_header,
     render_subcategory_header,
-    projects_in_primary,
     subcategories_for,
-    projects_in_subcategory,
 )
 from components.footer import render_footer
 from components.navbar import render_navbar
@@ -138,16 +137,22 @@ def _render_cards(cards: list[dict], section_id: str = "") -> None:
     st.markdown("</div>", unsafe_allow_html=True)
 
 
-def _render_primary_section(primary: str, base: list[dict]) -> None:
-    """Render a primary domain with its subcategory headings and project cards."""
+def _render_primary_groups(primary: str, sub_groups: dict[str, list[dict]]) -> None:
+    """Render a primary domain with its subcategory headings and project cards.
+
+    ``sub_groups`` maps subcategory -> list of projects, produced by the shared
+    ``group_projects_by_taxonomy`` helper (the single source of truth).
+    """
     render_domain_header(primary)
-    subs = subcategories_for(base, primary)
+    subs = subcategories_for([p for grp in sub_groups.values() for p in grp], primary)
     if not subs:
         # Primary domain has projects but no subcategory label -> show directly.
-        _render_cards(base, section_id=primary.replace(" ", "_"))
+        all_cards = [p for grp in sub_groups.values() for p in grp]
+        _render_cards(all_cards, section_id=primary.replace(" ", "_"))
+        st.markdown("---")
         return
     for sub in subs:
-        cards = projects_in_subcategory(base, primary, sub)
+        cards = sub_groups.get(sub, [])
         if not cards:
             continue
         render_subcategory_header(sub)
@@ -158,12 +163,14 @@ def _render_primary_section(primary: str, base: list[dict]) -> None:
 # ---- Filter all projects once ----
 filtered_all = [p for p in projects if _matches_filters(p)]
 
+# Single source of truth: group the filtered projects by primary_domain -> subcategory.
+grouped = group_projects_by_taxonomy(filtered_all)
+
 if sel_domain == "All":
     shown_any = False
     for primary in PRIMARY_DOMAINS:
-        base = [p for p in filtered_all if _matches_filters(p)]
-        base = projects_in_primary(base, primary)
-        if not base:
+        sub_groups = grouped.get(primary, {})
+        if not sub_groups:
             # Only show a simple placeholder for Agentic AI (no fabrication).
             if primary == "Agentic AI":
                 st.markdown(
@@ -177,13 +184,12 @@ if sel_domain == "All":
                 st.markdown("---")
             continue
         shown_any = True
-        _render_primary_section(primary, base)
+        _render_primary_groups(primary, sub_groups)
     if not shown_any:
         info_note("No projects match the current filters.", tone="amber")
 else:
-    base = [p for p in filtered_all if _matches_filters(p)]
-    base = projects_in_primary(base, sel_domain)
-    if not base:
+    sub_groups = grouped.get(sel_domain, {})
+    if not sub_groups:
         if sel_domain == "Agentic AI":
             info_note(
                 "No Agentic AI projects are published yet. This section is data-driven and will "
@@ -193,7 +199,7 @@ else:
         else:
             info_note("No projects in this domain match the current filters.", tone="amber")
     else:
-        _render_primary_section(sel_domain, base)
+        _render_primary_groups(sel_domain, sub_groups)
 
 st.markdown("---")
 st.caption(

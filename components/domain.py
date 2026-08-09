@@ -106,6 +106,37 @@ def projects_in_subcategory(projects: list[dict], primary: str, subcategory: str
     ]
 
 
+def group_projects_by_taxonomy(projects: list[dict]) -> dict[str, dict[str, list[dict]]]:
+    """Group projects by their explicit taxonomy (primary_domain -> subcategory).
+
+    This is the single source of truth for the hierarchy used by counts, the
+    Projects page, domain filters, and subcategory sections. Every project appears
+    in exactly ONE primary domain (and exactly one subcategory within it), so the
+    grouped counts always sum to ``len(projects)``.
+
+    Returns a nested dict::
+
+        {
+          "Machine Learning": {
+              "Supervised Learning":   [p1, p2, ...],
+              "Unsupervised Learning": [p3, ...],
+          },
+          "Deep Learning": {
+              "Computer Vision": [...],
+              ...
+          },
+        }
+    """
+    grouped: dict[str, dict[str, list[dict]]] = {}
+    for p in projects:
+        primary = p.get("primary_domain")
+        if not primary:
+            continue
+        sub = p.get("subcategory") or "Projects"
+        grouped.setdefault(primary, {}).setdefault(sub, []).append(p)
+    return grouped
+
+
 def domain_icon(name: str) -> str:
     return DOMAIN_META.get(name, ("🎖", ""))[0]
 

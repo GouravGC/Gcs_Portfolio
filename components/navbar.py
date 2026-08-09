@@ -8,12 +8,13 @@ from __future__ import annotations
 
 import streamlit as st
 
-from .ui import inject_css
+from .ui import inject_css, inject_js
 
 
 def render_navbar() -> None:
     """Call at the top of every page to inject styles and a consistent header."""
     inject_css()
+    inject_js()
     st.markdown(
         """
         <div style="display:flex; align-items:center; gap:.6rem; padding:.35rem 0;">

@@ -1,11 +1,12 @@
 """Project Detail page — deep dive into a selected project.
 
-Project selection is resolved from BOTH the Streamlit query parameter ``?id=`` and
-the ``session_state[selected_project_id]`` set by the View Details button. This
-guarantees the correct project opens regardless of how navigation is triggered.
+Project selection is resolved from the Streamlit query parameter ``?id=<project_id>``
+set by the View Details link on the listing pages (the single source of truth).
+This guarantees the exact project opens and never falls back to another project.
 
-If no valid project id is provided, a clear "Project not found" message is shown
-and a manual selector is offered (never a silent fallback to a default project).
+If no valid project id is provided, a clear "PROJECT NOT FOUND" message is shown
+and a manual selector is offered (never a silent fallback to a default project,
+e.g. the first project or "Student Academic Outcome").
 """
 from __future__ import annotations
 
@@ -34,47 +35,54 @@ projects = load_projects()
 project_ids = [p.get("id") for p in projects]
 
 
-def _resolve_project_id() -> str | None:
-    """Resolve the selected project id from session state and query params.
+def _get_qid() -> str | None:
+    """Resolve the project id from session_state (set by the View Details card).
 
-    Priority:
-      1. session_state[selected_project_id] set by the View Details button.
-      2. ?id=<project_id> query parameter (deep-link / cross-page link).
-
-    Returns a valid project id, or None when nothing is resolvable.
+    In Streamlit 1.37.x, ``st.switch_page`` clears all query params during the
+    switch, so a ``?id=`` query param cannot survive a page change. The reliable
+    mechanism is ``st.session_state["selected_project_id"]`` set in normal script
+    flow right before the switch. The ``?id=`` query param is kept only as a
+    secondary source for deep links, never a fallback to a wrong/default project.
     """
-    valid_ids = set(project_ids)
-
-    # 1. Session state set by the View Details button on listing pages
-    #    (the native non-callback navigation mechanism).
     sid = st.session_state.get("selected_project_id")
-    if sid and sid in valid_ids:
+    if sid:
         return sid
-
-    # 2. Query parameter (handles multi-value by taking the first).
     raw = st.query_params.get("id", None)
     qid = raw[0] if isinstance(raw, list) else raw
-    if qid and qid in valid_ids:
-        return qid
-
-    return None
+    return qid
 
 
-selected_id = _resolve_project_id()
+selected_id = _get_qid()
 
-# If we could not resolve a valid project id, show a clear "Project not found"
-# message and offer a manual selector. Never silently fall back to projects[0]
-# or to a default project (e.g. Student Academic Outcome).
+# Validate the id against the actual project database. If it is missing or does
+# not match any project, show a clear "PROJECT NOT FOUND" message and offer a
+# manual selector. Never silently fall back to projects[0] or to a default
+# project (e.g. Student Academic Outcome).
+valid_ids = set(project_ids)
+if selected_id not in valid_ids:
+    selected_id = None
+
+if not selected_id:
+    options = {p.get("name"): p.get("id") for p in projects}
+    # Default a manual pick to the only valid id we already know, so nothing ever
+    # falls back to a wrong or placeholder project.
+    chosen = st.selectbox(
+        "Select a project to view",
+        list(options.keys()),
+        index=None,
+        placeholder="Choose a project…",
+    )
+    if chosen:
+        selected_id = options[chosen]
+        # Persist the pick so it survives the natural rerun after this widget event.
+        st.session_state["selected_project_id"] = selected_id
+        st.query_params["id"] = selected_id
+
 if not selected_id:
     st.error("PROJECT NOT FOUND")
     st.markdown(
         "No matching project was selected. Please choose a project below to view its details."
     )
-    options = {p.get("name"): p.get("id") for p in projects}
-    chosen = st.selectbox("Select a project", list(options.keys()))
-    if chosen:
-        selected_id = options[chosen]
-        st.session_state["selected_project_id"] = selected_id
 
 project = get_project_by_id(selected_id) if selected_id else None
 
@@ -82,9 +90,6 @@ if not project:
     st.warning("PROJECT NOT FOUND — no valid project could be resolved.")
     render_footer()
     st.stop()
-
-# Persist the selected id for the running session.
-st.session_state["selected_project_id"] = project["id"]
 
 # ---- Hero ----
 tier = get_tier(project)
@@ -131,6 +136,7 @@ with a3:
 with a4:
     back = st.button("← Back to Projects", use_container_width=True)
     if back:
+        st.query_params.clear()
         st.switch_page("pages/2_Projects.py")
 st.markdown("---")
 

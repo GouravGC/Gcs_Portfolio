@@ -376,10 +376,107 @@ def inject_css() -> None:
         font-weight:600; color:#7E8CA8; text-transform:none; font-size:.78rem;
     }
 
-    /* ===== Animated counters (hero metrics) ===== */
+/* ===== Animated counters (hero metrics) ===== */
     .gc-counter { display:inline-block; }
     @keyframes gcCount { from { opacity:0; transform:scale(.6);} to { opacity:1; transform:scale(1);} }
     .gc-counter span { animation: gcCount .7s ease both; display:inline-block; }
+
+    /* ============================================================
+       VERSION 4 — VISUAL / INTERACTION ENHANCEMENT LAYER
+       (CSS-only + lightweight JS. Colors/theme unchanged.)
+       ============================================================ */
+
+    /* --- Hero staggered entrance + floating orbs --- */
+    .gc-hero-v4 { overflow: hidden; }
+    .gc-hero-line {
+        opacity: 0;
+        animation: gcHeroRise .7s cubic-bezier(.22,.61,.36,1) forwards;
+    }
+    .gc-hero-name { animation-delay: .05s; }
+    .gc-hero-title { animation-delay: .18s; }
+    .gc-hero-desc { animation-delay: .32s; }
+    .gc-hero-tags { animation-delay: .46s; }
+    @keyframes gcHeroRise {
+        from { opacity: 0; transform: translateY(22px); filter: blur(2px); }
+        to   { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+    .gc-hero-orb {
+        position: absolute; border-radius: 50%; pointer-events: none;
+        opacity: .5; filter: blur(40px); z-index: 0;
+        animation: gcOrbFloat 16s ease-in-out infinite;
+    }
+    .gc-hero-orb-1 { width: 220px; height: 220px; top: -60px; right: 8%;
+        background: radial-gradient(circle, rgba(79,140,255,.5), transparent 70%); }
+    .gc-hero-orb-2 { width: 180px; height: 180px; bottom: -50px; left: 6%;
+        background: radial-gradient(circle, rgba(45,212,191,.4), transparent 70%);
+        animation-delay: -6s; }
+    @keyframes gcOrbFloat {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        50%      { transform: translate(18px, 22px) scale(1.08); }
+    }
+    .gc-hero-v4 > *:not(.gc-hero-orb) { position: relative; z-index: 1; }
+
+    /* --- Scroll reveal (IntersectionObserver adds .gc-revealed) --- */
+    .gc-reveal {
+        opacity: 0;
+        transform: translateY(26px);
+        transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1);
+        will-change: opacity, transform;
+    }
+    .gc-reveal.gc-revealed { opacity: 1; transform: translateY(0); }
+    .gc-reveal-scale.gc-revealed { transform: translateY(0) scale(1); }
+    .gc-reveal-scale { transform: translateY(22px) scale(.97); }
+    @media (prefers-reduced-motion: reduce) {
+        .gc-hero-line, .gc-hero-orb, .gc-reveal { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; }
+    }
+
+    /* --- Project card micro-interactions (Version 4) --- */
+    .gc-card {
+        position: relative;
+        transition: transform .28s cubic-bezier(.22,.61,.36,1), box-shadow .28s ease,
+                    border-color .28s ease, background .28s ease;
+    }
+    .gc-card::before {
+        content: "";
+        position: absolute; inset: 0; border-radius: 16px;
+        background: linear-gradient(135deg, rgba(79,140,255,.14), rgba(45,212,191,.05));
+        opacity: 0; transition: opacity .28s ease; pointer-events: none;
+    }
+    .gc-card:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 22px 52px rgba(0,0,0,.55); border-color: rgba(79,140,255,.5); }
+    .gc-card:hover::before { opacity: 1; }
+    .gc-card h3 { transition: color .2s ease; }
+    .gc-card:hover h3 { color: #FFFFFF; }
+
+    /* --- Domain / subcategory animated entrances --- */
+    .gc-domain-header { animation: gcFadeUp .6s ease both; }
+    .gc-subcategory-header { animation: gcSlideRight .5s ease both; }
+
+    /* --- Metric cards polish --- */
+    .gc-metric-card {
+        position: relative; overflow: hidden;
+        transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .gc-metric-card::after {
+        content: ""; position: absolute; inset: -40% -20%;
+        background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.08) 50%, transparent 70%);
+        transform: translateX(-120%); transition: transform .8s ease; pointer-events: none;
+    }
+    .gc-metric-card:hover::after { transform: translateX(120%); }
+    .gc-metric-card:hover { transform: translateY(-5px); box-shadow: 0 18px 40px rgba(0,0,0,.5); border-color: rgba(79,140,255,.4); }
+
+    /* --- Timeline entrance --- */
+    .gc-timeline-step { transition: transform .3s ease; }
+    .gc-timeline-step:hover { transform: translateX(6px); }
+    .gc-timeline-dot { transition: transform .25s ease, box-shadow .25s ease; }
+    .gc-timeline-step:hover .gc-timeline-dot { transform: scale(1.12); box-shadow: 0 0 0 6px rgba(79,140,255,.25); }
+
+    /* --- Background depth (CSS only, subtle) --- */
+    [data-testid="stAppViewContainer"]::before {
+        content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+        background:
+            radial-gradient(600px 400px at 15% 20%, rgba(79,140,255,.05), transparent 60%),
+            radial-gradient(700px 500px at 85% 80%, rgba(45,212,191,.04), transparent 60%);
+    }
 
     /* ===== Responsive ===== */
     @media (max-width: 768px) {
@@ -424,24 +521,70 @@ def inject_css() -> None:
     st.markdown(css, unsafe_allow_html=True)
 
 
+def inject_js() -> None:
+    """Inject a tiny IntersectionObserver script for scroll-reveal animations.
+
+    This is presentation-layer only: it adds ``gc-revealed`` to any element with
+    the ``gc-reveal`` class when it enters the viewport. CSS handles the actual
+    transition. It never touches routing, state, or Streamlit widgets.
+    """
+    js = """
+    <script>
+    (function() {
+      if (window.__gcRevealInstalled) return;
+      window.__gcRevealInstalled = true;
+      function init() {
+        var els = document.querySelectorAll('.gc-reveal');
+        if (!els.length) return;
+        if (!('IntersectionObserver' in window)) {
+          els.forEach(function(el){ el.classList.add('gc-revealed'); });
+          return;
+        }
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            if (entry.isIntersecting) {
+              entry.target.classList.add('gc-revealed');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        els.forEach(function(el){ io.observe(el); });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+    </script>
+    """
+    st.markdown(js, unsafe_allow_html=True)
+
+
 def render_hero(
     name: str,
     title: str,
     summary: str,
     tags: list[str] | None = None,
 ) -> None:
-    """Render the hero banner with a modern, premium layout."""
+    """Render the hero banner with a modern, premium layout.
+
+    Adds a staggered entrance (name -> headline -> description -> tags) and
+    soft floating orbs for subtle background depth. Colors are unchanged.
+    """
     tags_html = ""
     if tags:
-        tags_html = '<div style="margin-top:.9rem;">' + "".join(
+        tags_html = '<div class="gc-hero-line gc-hero-tags" style="margin-top:.9rem;">' + "".join(
             f'<span class="gc-hero-badge">{t}</span>' for t in tags
         ) + "</div>"
     st.markdown(
         f"""
-        <div class="gc-hero gc-anim">
-            <h1>{name}</h1>
-            <div class="gc-title">{title}</div>
-            <p>{summary}</p>
+        <div class="gc-hero gc-hero-v4">
+            <div class="gc-hero-orb gc-hero-orb-1"></div>
+            <div class="gc-hero-orb gc-hero-orb-2"></div>
+            <h1 class="gc-hero-line gc-hero-name">{name}</h1>
+            <div class="gc-title gc-hero-line gc-hero-title">{title}</div>
+            <p class="gc-hero-line gc-hero-desc">{summary}</p>
             {tags_html}
         </div>
         """,
