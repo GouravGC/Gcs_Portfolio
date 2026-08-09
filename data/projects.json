@@ -98,7 +98,22 @@
       "status": "Deployed",
       "tier": "featured",
       "deployment_status": "streamlit_cloud",
-      "verified_live_demo": true
+      "verified_live_demo": true,
+      "domains": [
+        "Data Analytics",
+        "Machine Learning",
+        "Supervised Learning",
+        "Deep Learning"
+      ],
+      "primary_domain": "Deep Learning",
+      "subcategory": "Deep Learning",
+      "secondary_tags": [
+        "Neural Network",
+        "MLP",
+        "Classification",
+        "SHAP",
+        "MLOps"
+      ]
     },
     {
       "name": "Animals-10 Image Classification (AlexNet)",
@@ -191,7 +206,21 @@
       "status": "Deployed",
       "tier": "featured",
       "deployment_status": "streamlit_cloud",
-      "verified_live_demo": true
+      "verified_live_demo": true,
+      "domains": [
+        "Machine Learning",
+        "Supervised Learning",
+        "Deep Learning",
+        "Computer Vision"
+      ],
+      "primary_domain": "Deep Learning",
+      "subcategory": "Computer Vision",
+      "secondary_tags": [
+        "CNN",
+        "AlexNet",
+        "Image Classification",
+        "ONNX"
+      ]
     },
     {
       "name": "Human Activity Recognition (Deep Residual MLP)",
@@ -282,7 +311,22 @@
       "status": "Deployed",
       "tier": "featured",
       "deployment_status": "streamlit_cloud",
-      "verified_live_demo": true
+      "verified_live_demo": true,
+      "domains": [
+        "Data Analytics",
+        "Machine Learning",
+        "Supervised Learning",
+        "Deep Learning",
+        "Time Series"
+      ],
+      "primary_domain": "Deep Learning",
+      "subcategory": "Deep Learning",
+      "secondary_tags": [
+        "Residual MLP",
+        "Classification",
+        "Sensor Data",
+        "Time Series"
+      ]
     },
     {
       "name": "End-to-End Credit Card Fraud Detection",
@@ -374,7 +418,19 @@
       "status": "Deployed",
       "tier": "featured",
       "deployment_status": "streamlit_cloud",
-      "verified_live_demo": true
+      "verified_live_demo": true,
+      "domains": [
+        "Data Analytics",
+        "Machine Learning",
+        "Supervised Learning"
+      ],
+      "primary_domain": "Machine Learning",
+      "subcategory": "Supervised Learning",
+      "secondary_tags": [
+        "Classification",
+        "XGBoost",
+        "Imbalanced Data"
+      ]
     },
     {
       "name": "Customer Segmentation (Unsupervised Learning)",
@@ -477,7 +533,21 @@
       "status": "Deployed",
       "tier": "featured",
       "deployment_status": "streamlit_cloud",
-      "verified_live_demo": true
+      "verified_live_demo": true,
+      "domains": [
+        "Data Analytics",
+        "Machine Learning",
+        "Unsupervised Learning"
+      ],
+      "primary_domain": "Machine Learning",
+      "subcategory": "Unsupervised Learning",
+      "secondary_tags": [
+        "Clustering",
+        "K-Means",
+        "RFM",
+        "GMM",
+        "DBSCAN"
+      ]
     },
     {
       "name": "Electricity Consumption Forecasting (Vanilla RNN)",
@@ -571,7 +641,22 @@
       "status": "Deployed",
       "tier": "featured",
       "deployment_status": "streamlit_cloud",
-      "verified_live_demo": true
+      "verified_live_demo": true,
+      "domains": [
+        "Data Analytics",
+        "Machine Learning",
+        "Supervised Learning",
+        "Deep Learning",
+        "Time Series"
+      ],
+      "primary_domain": "Deep Learning",
+      "subcategory": "Sequential / Time-Series Deep Learning",
+      "secondary_tags": [
+        "RNN",
+        "Time Series",
+        "Forecasting",
+        "MLflow"
+      ]
     },
     {
       "name": "Market Basket Analysis & Product Recommendation",
@@ -666,7 +751,21 @@
       "status": "Deployed",
       "tier": "featured",
       "deployment_status": "streamlit_cloud",
-      "verified_live_demo": true
+      "verified_live_demo": true,
+      "domains": [
+        "Data Analytics",
+        "Machine Learning",
+        "Unsupervised Learning",
+        "Recommendation Systems"
+      ],
+      "primary_domain": "Machine Learning",
+      "subcategory": "Unsupervised Learning",
+      "secondary_tags": [
+        "Association Rule Mining",
+        "Apriori",
+        "FP-Growth",
+        "Recommendation System"
+      ]
     },
     {
       "name": "Loan Default Prediction",
@@ -767,7 +866,20 @@
       "status": "Deployed",
       "tier": "featured",
       "deployment_status": "streamlit_cloud",
-      "verified_live_demo": true
+      "verified_live_demo": true,
+      "domains": [
+        "Data Analytics",
+        "Machine Learning",
+        "Supervised Learning"
+      ],
+      "primary_domain": "Machine Learning",
+      "subcategory": "Supervised Learning",
+      "secondary_tags": [
+        "CatBoost",
+        "Optuna",
+        "Classification",
+        "SHAP"
+      ]
     },
     {
       "name": "Insurance Cross-Sell NoSQL Analytics",
@@ -869,7 +981,20 @@
       "status": "Deployed",
       "tier": "featured",
       "deployment_status": "streamlit_cloud",
-      "verified_live_demo": true
+      "verified_live_demo": true,
+      "domains": [
+        "Data Analytics",
+        "Machine Learning",
+        "Supervised Learning"
+      ],
+      "primary_domain": "Machine Learning",
+      "subcategory": "Supervised Learning",
+      "secondary_tags": [
+        "XGBoost",
+        "Classification",
+        "NoSQL",
+        "MongoDB"
+      ]
     },
     {
       "name": "Retail Data Warehouse Analytics",
@@ -974,7 +1099,21 @@
       "status": "Deployed",
       "tier": "featured",
       "deployment_status": "streamlit_cloud",
-      "verified_live_demo": true
+      "verified_live_demo": true,
+      "domains": [
+        "Data Analytics",
+        "Machine Learning",
+        "Supervised Learning"
+      ],
+      "primary_domain": "Data Analytics",
+      "subcategory": "Analytics Projects",
+      "secondary_tags": [
+        "SQL",
+        "Data Warehousing",
+        "RFM",
+        "Machine Learning",
+        "SHAP"
+      ]
     },
     {
       "name": "End-to-End Customer Churn Prediction",
@@ -1070,7 +1209,19 @@
       "status": "Deployed",
       "tier": "featured",
       "deployment_status": "streamlit_cloud",
-      "verified_live_demo": true
+      "verified_live_demo": true,
+      "domains": [
+        "Data Analytics",
+        "Machine Learning",
+        "Supervised Learning"
+      ],
+      "primary_domain": "Machine Learning",
+      "subcategory": "Supervised Learning",
+      "secondary_tags": [
+        "Classification",
+        "XGBoost",
+        "SQL"
+      ]
     },
     {
       "name": "Concrete Strength Predictor",
@@ -1160,7 +1311,19 @@
       "status": "Deployed",
       "tier": "featured",
       "deployment_status": "flask_api",
-      "verified_live_demo": true
+      "verified_live_demo": true,
+      "domains": [
+        "Data Analytics",
+        "Machine Learning",
+        "Supervised Learning"
+      ],
+      "primary_domain": "Machine Learning",
+      "subcategory": "Supervised Learning",
+      "secondary_tags": [
+        "Regression",
+        "Flask",
+        "Render"
+      ]
     },
     {
       "name": "Student Performance Predictor",
@@ -1250,7 +1413,19 @@
       "status": "Deployed",
       "tier": "featured",
       "deployment_status": "flask_api",
-      "verified_live_demo": true
+      "verified_live_demo": true,
+      "domains": [
+        "Data Analytics",
+        "Machine Learning",
+        "Supervised Learning"
+      ],
+      "primary_domain": "Machine Learning",
+      "subcategory": "Supervised Learning",
+      "secondary_tags": [
+        "Regression",
+        "Flask",
+        "Render"
+      ]
     },
     {
       "name": "Hospital 30-Day Readmission Prediction",
@@ -1347,7 +1522,20 @@
       "status": "Production-ready (no verified live URL)",
       "tier": "featured",
       "deployment_status": "not_deployed",
-      "verified_live_demo": false
+      "verified_live_demo": false,
+      "domains": [
+        "Data Analytics",
+        "Machine Learning",
+        "Supervised Learning"
+      ],
+      "primary_domain": "Machine Learning",
+      "subcategory": "Supervised Learning",
+      "secondary_tags": [
+        "XGBoost",
+        "Classification",
+        "Healthcare",
+        "SHAP"
+      ]
     },
     {
       "name": "HR Workforce Intelligence & Analytics Dashboard",
@@ -1424,7 +1612,18 @@
       "status": "Deployed",
       "tier": "featured",
       "deployment_status": "streamlit_cloud",
-      "verified_live_demo": true
+      "verified_live_demo": true,
+      "domains": [
+        "Data Analytics"
+      ],
+      "primary_domain": "Data Analytics",
+      "subcategory": "Business Intelligence",
+      "secondary_tags": [
+        "Power BI",
+        "SQL",
+        "Dashboards",
+        "Plotly"
+      ]
     },
     {
       "name": "Sales Business Intelligence Dashboard",
@@ -1503,7 +1702,18 @@
       "status": "Deployed",
       "tier": "featured",
       "deployment_status": "streamlit_cloud",
-      "verified_live_demo": true
+      "verified_live_demo": true,
+      "domains": [
+        "Data Analytics"
+      ],
+      "primary_domain": "Data Analytics",
+      "subcategory": "Business Intelligence",
+      "secondary_tags": [
+        "Power BI",
+        "SQL",
+        "DuckDB",
+        "Dashboards"
+      ]
     },
     {
       "name": "Retail Demand Forecasting (Deep Learning MLP)",
@@ -1567,7 +1777,20 @@
       "status": "Deployed",
       "tier": "experimental",
       "deployment_status": "streamlit_cloud",
-      "verified_live_demo": true
+      "verified_live_demo": true,
+      "domains": [
+        "Data Analytics",
+        "Deep Learning",
+        "Time Series"
+      ],
+      "primary_domain": "Deep Learning",
+      "subcategory": "Deep Learning",
+      "secondary_tags": [
+        "MLP",
+        "Regression",
+        "Forecasting",
+        "Time Series"
+      ]
     },
     {
       "name": "Basic Chatbot Application",
@@ -1622,7 +1845,17 @@
       "status": "Mini/experimental",
       "tier": "experimental",
       "deployment_status": "not_deployed",
-      "verified_live_demo": false
+      "verified_live_demo": false,
+      "domains": [
+        "Generative AI"
+      ],
+      "primary_domain": "Generative AI",
+      "subcategory": "LLM Applications",
+      "secondary_tags": [
+        "LLM",
+        "Chatbot",
+        "Prompt Engineering"
+      ]
     },
     {
       "name": "Mini ChatGPT",
@@ -1677,7 +1910,17 @@
       "status": "Mini/experimental",
       "tier": "experimental",
       "deployment_status": "not_deployed",
-      "verified_live_demo": false
+      "verified_live_demo": false,
+      "domains": [
+        "Generative AI"
+      ],
+      "primary_domain": "Generative AI",
+      "subcategory": "LLM Applications",
+      "secondary_tags": [
+        "LLM",
+        "Chatbot",
+        "Prompt Engineering"
+      ]
     },
     {
       "name": "Word Cloud App",
@@ -1733,7 +1976,17 @@
       "status": "Mini/experimental",
       "tier": "experimental",
       "deployment_status": "not_deployed",
-      "verified_live_demo": false
+      "verified_live_demo": false,
+      "domains": [
+        "Data Analytics"
+      ],
+      "primary_domain": "Data Analytics",
+      "subcategory": "Analytics Projects",
+      "secondary_tags": [
+        "Text Visualization",
+        "NLP",
+        "Word Cloud"
+      ]
     },
     {
       "name": "Basic Stock Market App",
@@ -1786,7 +2039,18 @@
       "status": "Mini/experimental",
       "tier": "experimental",
       "deployment_status": "not_deployed",
-      "verified_live_demo": false
+      "verified_live_demo": false,
+      "domains": [
+        "Data Analytics",
+        "Time Series"
+      ],
+      "primary_domain": "Data Analytics",
+      "subcategory": "Analytics Projects",
+      "secondary_tags": [
+        "Financial Analytics",
+        "Time Series",
+        "yfinance"
+      ]
     }
   ]
 }

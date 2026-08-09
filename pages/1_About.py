@@ -4,10 +4,11 @@ from __future__ import annotations
 import streamlit as st
 
 from components.footer import render_footer
+from components.metrics import render_domain_breakdown
 from components.navbar import render_navbar
 from components.timeline import render_journey_timeline
 from components.ui import render_hero, section_header
-from utils.helpers import load_profile
+from utils.helpers import load_profile, load_projects
 
 st.set_page_config(page_title="About | Gourav Chhatwani", page_icon="👤", layout="wide")
 render_navbar()
@@ -28,6 +29,15 @@ st.markdown(
     "time-series forecasting, recommendation systems, and finally modern AI engineering "
     "and cloud deployment."
 )
+
+st.markdown("---")
+section_header(
+    "Journey Across Domains",
+    "Each project is classified under exactly one primary domain, so the counts "
+    "below sum to the total portfolio size without double-counting.",
+)
+projects = load_projects()
+render_domain_breakdown(projects)
 
 st.markdown("---")
 section_header(

@@ -60,6 +60,20 @@ def validate_projects():
     check(len(ids) == len(set(ids)), "project ids are unique")
     check(len(projects) > 0, f"{len(projects)} projects loaded")
 
+    # Strict taxonomy: each project has exactly one primary_domain + subcategory.
+    from components.domain import PRIMARY_DOMAINS
+
+    missing_primary = [p["id"] for p in projects if not p.get("primary_domain")]
+    check(not missing_primary, f"all projects have a primary_domain ({len(missing_primary)} missing)")
+    invalid_primary = [
+        p["id"]
+        for p in projects
+        if p.get("primary_domain") and p.get("primary_domain") not in PRIMARY_DOMAINS
+    ]
+    check(not invalid_primary, f"all primary_domains are valid ({invalid_primary})")
+    missing_sub = [p["id"] for p in projects if not p.get("subcategory")]
+    check(not missing_sub, f"all projects have a subcategory ({len(missing_sub)} missing)")
+
     for p in projects:
         gurl = p.get("github_url", "")
         check(_is_valid_url(gurl), f"{p['id']}: valid github_url")
@@ -111,6 +125,7 @@ def validate_imports():
         "components.metrics",
         "components.timeline",
         "components.detail_sections",
+        "components.domain",
         "resume.resume_template",
     ]
     for mod in modules:

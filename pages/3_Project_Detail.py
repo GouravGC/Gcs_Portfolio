@@ -35,36 +35,41 @@ project_ids = [p.get("id") for p in projects]
 
 
 def _resolve_project_id() -> str | None:
-    """Resolve the selected project id from query params and session state.
+    """Resolve the selected project id from session state and query params.
 
     Priority:
-      1. ?id=<project_id> query parameter (deep-link / cross-page link).
-      2. session_state[selected_project_id] set by the View Details button.
+      1. session_state[selected_project_id] set by the View Details button.
+      2. ?id=<project_id> query parameter (deep-link / cross-page link).
 
     Returns a valid project id, or None when nothing is resolvable.
     """
     valid_ids = set(project_ids)
 
-    # 1. Query parameter (handles multi-value by taking the first).
+    # 1. Session state set by the View Details button on listing pages
+    #    (the native non-callback navigation mechanism).
+    sid = st.session_state.get("selected_project_id")
+    if sid and sid in valid_ids:
+        return sid
+
+    # 2. Query parameter (handles multi-value by taking the first).
     raw = st.query_params.get("id", None)
     qid = raw[0] if isinstance(raw, list) else raw
     if qid and qid in valid_ids:
         return qid
-
-    # 2. Session state set by the View Details button on listing pages.
-    sid = st.session_state.get("selected_project_id")
-    if sid and sid in valid_ids:
-        return sid
 
     return None
 
 
 selected_id = _resolve_project_id()
 
-# If we could not resolve a project id, build a lookup map and show a selector so
-# the user can still navigate. Never silently pick projects[0].
+# If we could not resolve a valid project id, show a clear "Project not found"
+# message and offer a manual selector. Never silently fall back to projects[0]
+# or to a default project (e.g. Student Academic Outcome).
 if not selected_id:
-    st.error("Project not found. Please select a valid project below.")
+    st.error("PROJECT NOT FOUND")
+    st.markdown(
+        "No matching project was selected. Please choose a project below to view its details."
+    )
     options = {p.get("name"): p.get("id") for p in projects}
     chosen = st.selectbox("Select a project", list(options.keys()))
     if chosen:
@@ -74,7 +79,7 @@ if not selected_id:
 project = get_project_by_id(selected_id) if selected_id else None
 
 if not project:
-    st.warning("No project selected. Use the sidebar or the selector above.")
+    st.warning("PROJECT NOT FOUND — no valid project could be resolved.")
     render_footer()
     st.stop()
 

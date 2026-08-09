@@ -291,11 +291,103 @@ def inject_css() -> None:
     .gc-footer a { color:#8FA0BC; text-decoration:none; }
     .gc-footer a:hover { color:#AEC6FF; }
 
+/* ===== Domain navigation ===== */
+    .gc-domain-nav-wrap { margin: .2rem 0 .4rem; }
+    .gc-domain-nav-label {
+        font-size:.78rem; letter-spacing:.4px; text-transform:uppercase;
+        color:#7E8CA8; font-weight:700; margin-bottom:.1rem;
+    }
+    /* Horizontal domain radio (browse by domain) */
+    .stRadio > div[role="radiogroup"] {
+        flex-direction: row !important; flex-wrap: wrap !important; gap: .4rem !important;
+    }
+    .stRadio > div[role="radiogroup"] label {
+        background: rgba(255,255,255,.05) !important;
+        border: 1px solid rgba(255,255,255,.12) !important;
+        border-radius: 999px !important; padding: .35rem .95rem !important;
+        color: #C6D4EA !important; font-weight: 600 !important; font-size:.85rem !important;
+        transition: transform .18s ease, box-shadow .18s ease, background .18s ease,
+                    border-color .18s ease !important;
+        margin: 0 !important;
+    }
+    .stRadio > div[role="radiogroup"] label:hover {
+        transform: translateY(-2px); border-color: rgba(79,140,255,.5);
+        background: rgba(79,140,255,.12) !important;
+    }
+    .stRadio > div[role="radiogroup"] label:has(input:checked) {
+        background: linear-gradient(135deg,#4F8CFF,#3B6FE0) !important;
+        border-color: rgba(255,255,255,.25) !important; color:#fff !important;
+        box-shadow: 0 6px 18px rgba(79,140,255,.4) !important;
+    }
+    .stRadio > div[role="radiogroup"] label > div:first-child {
+        display: none !important;  /* hide the radio circle, keep pill look */
+    }
+
+    /* Static chips row (visual + query deep-links) */
+    .gc-chips { display:flex; flex-wrap:wrap; gap:.4rem; margin:.4rem 0 .6rem; }
+    .gc-chip {
+        display:inline-flex; align-items:center; padding:.32rem .85rem; border-radius:999px;
+        font-size:.8rem; font-weight:600; color:#C6D4EA; text-decoration:none;
+        background: rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.12);
+        transition: transform .18s ease, box-shadow .18s ease, background .18s ease,
+                    border-color .18s ease, color .18s ease;
+    }
+    .gc-chip:hover { transform: translateY(-2px); border-color: rgba(79,140,255,.55); color:#fff; background: rgba(79,140,255,.12); }
+    .gc-chip.active {
+        background: linear-gradient(135deg,#4F8CFF,#3B6FE0); color:#fff;
+        border-color: rgba(255,255,255,.25); box-shadow:0 6px 18px rgba(79,140,255,.4);
+    }
+
+    /* ===== Domain section headers ===== */
+    .gc-domain-header {
+        display:flex; align-items:center; gap:.9rem; margin: 1.6rem 0 .9rem;
+        padding:.9rem 1.1rem; border-radius:14px;
+        background: linear-gradient(120deg, rgba(79,140,255,.10), rgba(255,255,255,.015));
+        border:1px solid rgba(79,140,255,.18);
+        box-shadow:0 8px 26px rgba(0,0,0,.25);
+    }
+    .gc-domain-icon {
+        font-size:1.6rem; width:48px; height:48px; flex-shrink:0; border-radius:12px;
+        display:flex; align-items:center; justify-content:center;
+        background: linear-gradient(135deg,#4F8CFF,#7C5CFF);
+        box-shadow:0 6px 18px rgba(79,140,255,.35);
+    }
+    .gc-domain-title { font-size:1.35rem; font-weight:800; color:#F0F4FF; letter-spacing:-.3px; }
+    .gc-domain-sub { font-size:.85rem; color:#8FA0BC; }
+    .gc-domain-sub-title {
+        font-size:1.05rem; font-weight:700; color:#C9DCFF; margin:1.1rem 0 .4rem;
+        display:flex; align-items:center; gap:.5rem;
+    }
+    .gc-domain-sub-title::after {
+        content:""; flex:1; height:1px; background:linear-gradient(90deg, rgba(79,140,255,.35), transparent);
+    }
+
+    /* Subcategory heading inside a primary domain (strict hierarchy) */
+    .gc-subcategory-header {
+        display:flex; align-items:center; gap:.5rem; margin:.9rem 0 .6rem;
+        font-size:1.05rem; font-weight:700; color:#AEC6FF;
+        letter-spacing:.2px; text-transform:uppercase;
+    }
+    .gc-subcategory-header::after {
+        content:""; flex:1; height:1px;
+        background:linear-gradient(90deg, rgba(79,140,255,.30), transparent);
+    }
+    .gc-subcategory-header small {
+        font-weight:600; color:#7E8CA8; text-transform:none; font-size:.78rem;
+    }
+
+    /* ===== Animated counters (hero metrics) ===== */
+    .gc-counter { display:inline-block; }
+    @keyframes gcCount { from { opacity:0; transform:scale(.6);} to { opacity:1; transform:scale(1);} }
+    .gc-counter span { animation: gcCount .7s ease both; display:inline-block; }
+
     /* ===== Responsive ===== */
     @media (max-width: 768px) {
         .gc-hero h1 { font-size: 2rem; }
         .gc-hero { padding: 2rem 1.2rem; }
         .gc-hero-badge { font-size:.68rem; }
+        .gc-domain-header { padding:.7rem .8rem; }
+        .gc-domain-title { font-size:1.1rem; }
     }
 
 /* ===== Light-mode override ===== */
