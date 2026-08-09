@@ -17,6 +17,7 @@ render_hero(
     name=profile["name"],
     title=profile["professional_title"],
     summary=profile["summary"],
+    tags=["🎓 Self-driven Journey", "📈 End-to-End Projects", "☁️ Cloud & MLOps"],
 )
 
 section_header("About Me")
@@ -59,7 +60,7 @@ st.markdown("---")
 section_header("Fresher Positioning")
 st.markdown(
     "This portfolio is evidence-driven. Every project, metric, and deployment link is "
-    "verified from public GitHub repositories. Where personal information could not be "
+    "drawn from public GitHub repositories. Where personal information could not be "
     "verified, it is clearly marked as a placeholder rather than fabricated."
 )
 

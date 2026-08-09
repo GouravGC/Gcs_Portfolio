@@ -3,12 +3,8 @@ from __future__ import annotations
 
 import streamlit as st
 
+from components.ui import metric_card
 from utils.helpers import has_verified_demo, load_projects
-
-
-def render_metric_row(label: str, value: str, delta: str | None = None) -> None:
-    """Render a single metric card via st.metric."""
-    st.metric(label=label, value=value, delta=delta)
 
 
 def render_portfolio_metrics() -> None:
@@ -22,10 +18,10 @@ def render_portfolio_metrics() -> None:
         categories.update(p.get("category", []))
     c1, c2, c3, c4 = st.columns(4)
     with c1:
-        render_metric_row("Total Projects", str(total))
+        metric_card(str(total), "Total Projects")
     with c2:
-        render_metric_row("Featured", str(featured))
+        metric_card(str(featured), "Featured")
     with c3:
-        render_metric_row("Deployed", str(deployed))
+        metric_card(str(deployed), "Deployed")
     with c4:
-        render_metric_row("Categories", str(len(categories)))
+        metric_card(str(len(categories)), "Categories")

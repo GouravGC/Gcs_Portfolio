@@ -1,6 +1,8 @@
 """Skill card component."""
 from __future__ import annotations
 
+import html as _html
+
 import streamlit as st
 
 EVIDENCE_LABEL = {
@@ -10,7 +12,7 @@ EVIDENCE_LABEL = {
 
 
 def skill_card(skill: dict) -> None:
-    """Render a single skill with its evidence label."""
+    """Render a single skill as an elegant badge with its evidence label."""
     name = skill.get("name", "Untitled")
     evidence = skill.get("evidence", "technical_knowledge")
     label = EVIDENCE_LABEL.get(evidence, "Technical Knowledge")
@@ -19,7 +21,7 @@ def skill_card(skill: dict) -> None:
     st.markdown(
         f"""
         <div class="gc-card">
-            <strong>{name}</strong>
+            <strong>{_html.escape(name)}</strong>
             <div style="margin-top:.35rem;">
                 <span class="{cls}">{label}</span>
             </div>
@@ -27,3 +29,9 @@ def skill_card(skill: dict) -> None:
         """,
         unsafe_allow_html=True,
     )
+
+
+def skill_badge(name: str, evidence: str = "technical_knowledge") -> None:
+    """Render a compact inline skill badge."""
+    cls = "gc-badge green" if evidence == "project_demonstrated" else "gc-badge blue"
+    st.markdown(f'<span class="{cls}">{_html.escape(name)}</span>', unsafe_allow_html=True)

@@ -1,0 +1,266 @@
+[
+  {
+    "type": "profile",
+    "key": "github",
+    "url": "https://github.com/GouravGC",
+    "ok": true
+  },
+  {
+    "type": "profile",
+    "key": "linkedin",
+    "url": "https://www.linkedin.com/in/gourav-chhatwani-9a301134a/",
+    "ok": false
+  },
+  {
+    "type": "project",
+    "key": "student-academic-outcome-prediction:github",
+    "url": "https://github.com/GouravGC/Deep-Learning-based-Student-Academic-Outcome-Prediction",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "student-academic-outcome-prediction:demo",
+    "url": "https://deep-learning-based-student-academic-outcome-prediction.streamlit.app/",
+    "ok": false
+  },
+  {
+    "type": "project",
+    "key": "animal-10-classification:github",
+    "url": "https://github.com/GouravGC/animal-10-classification-production",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "animal-10-classification:demo",
+    "url": "https://animal-10-classification-pytorch.streamlit.app/",
+    "ok": false
+  },
+  {
+    "type": "project",
+    "key": "human-activity-recognition:github",
+    "url": "https://github.com/GouravGC/Human-activity-recognition-deep-residual-mlp",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "human-activity-recognition:demo",
+    "url": "https://human-activity-recognition-deep-residual-mlp.streamlit.app/",
+    "ok": false
+  },
+  {
+    "type": "project",
+    "key": "fraud-detection:github",
+    "url": "https://github.com/GouravGC/End-To-End-Fraud-Detection-System",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "fraud-detection:demo",
+    "url": "https://end-to-end-fraud-detection-system-gc.streamlit.app/",
+    "ok": false
+  },
+  {
+    "type": "project",
+    "key": "customer-segmentation:github",
+    "url": "https://github.com/GouravGC/Customer-Segmentation-using-Unsupervised-Learning-End-to-End",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "customer-segmentation:demo",
+    "url": null,
+    "ok": null
+  },
+  {
+    "type": "project",
+    "key": "electricity-forecasting-rnn:github",
+    "url": "https://github.com/GouravGC/Electricity-Consumption-Forecasting-RNN",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "electricity-forecasting-rnn:demo",
+    "url": null,
+    "ok": null
+  },
+  {
+    "type": "project",
+    "key": "market-basket-analysis:github",
+    "url": "https://github.com/GouravGC/Market-Basket-Analysis-Product-Recommendation",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "market-basket-analysis:demo",
+    "url": null,
+    "ok": null
+  },
+  {
+    "type": "project",
+    "key": "loan-default-predictor:github",
+    "url": "https://github.com/GouravGC/Loan-Default-Predictor",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "loan-default-predictor:demo",
+    "url": "https://loan-default-predictor-gc.streamlit.app/",
+    "ok": false
+  },
+  {
+    "type": "project",
+    "key": "insurance-cross-sell:github",
+    "url": "https://github.com/GouravGC/Insurance-Cross-Sell-NoSQL-Analytics",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "insurance-cross-sell:demo",
+    "url": "https://insurance-cross-sell-nosql-analytics.streamlit.app/",
+    "ok": false
+  },
+  {
+    "type": "project",
+    "key": "retail-data-warehouse-analytics:github",
+    "url": "https://github.com/GouravGC/Retail-Data-Warehouse-Analytics",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "retail-data-warehouse-analytics:demo",
+    "url": "https://retail-data-warehouse-analytics.streamlit.app/",
+    "ok": false
+  },
+  {
+    "type": "project",
+    "key": "customer-churn-prediction:github",
+    "url": "https://github.com/GouravGC/End-to-End-Customer-Churn-Prediction",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "customer-churn-prediction:demo",
+    "url": "https://end-to-end-customer-churn-prediction-gc.streamlit.app/",
+    "ok": false
+  },
+  {
+    "type": "project",
+    "key": "concrete-strength-predictor:github",
+    "url": "https://github.com/GouravGC/End-To-End-Concrete-Strength-Predictor",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "concrete-strength-predictor:demo",
+    "url": "https://end-to-end-concrete-strength-predictor.onrender.com/",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "student-performance-predictor:github",
+    "url": "https://github.com/GouravGC/End-to-End-Student-Performance-Predictor-App",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "student-performance-predictor:demo",
+    "url": "https://end-to-end-student-performance-predictor-t4pc.onrender.com/",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "hospital-readmissions:github",
+    "url": "https://github.com/GouravGC/Predicting-30-Day-Hospital-Readmissions",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "hospital-readmissions:demo",
+    "url": null,
+    "ok": null
+  },
+  {
+    "type": "project",
+    "key": "hr-analytics-dashboard:github",
+    "url": "https://github.com/GouravGC/HR_Analytics_Dashboard",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "hr-analytics-dashboard:demo",
+    "url": "https://hranalyticsdashboard-gc.streamlit.app/",
+    "ok": false
+  },
+  {
+    "type": "project",
+    "key": "sales-bi-dashboard:github",
+    "url": "https://github.com/GouravGC/sales-business-intelligence-dashboard",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "sales-bi-dashboard:demo",
+    "url": "https://sales-business-intelligence-dashboard.streamlit.app/",
+    "ok": false
+  },
+  {
+    "type": "project",
+    "key": "retail-demand-forecasting:github",
+    "url": "https://github.com/GouravGC/End-To-End-Retail_Demand_Forecasting-System",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "retail-demand-forecasting:demo",
+    "url": null,
+    "ok": null
+  },
+  {
+    "type": "project",
+    "key": "basic-chatbot:github",
+    "url": "https://github.com/GouravGC/Basic-Chatbot-Application",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "basic-chatbot:demo",
+    "url": null,
+    "ok": null
+  },
+  {
+    "type": "project",
+    "key": "mini-chatgpt:github",
+    "url": "https://github.com/GouravGC/Mini_Chatgpt",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "mini-chatgpt:demo",
+    "url": null,
+    "ok": null
+  },
+  {
+    "type": "project",
+    "key": "word-cloud-app:github",
+    "url": "https://github.com/GouravGC/word_cloud_app",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "word-cloud-app:demo",
+    "url": null,
+    "ok": null
+  },
+  {
+    "type": "project",
+    "key": "basic-stock-market-app:github",
+    "url": "https://github.com/GouravGC/Basic_stock_market_app",
+    "ok": true
+  },
+  {
+    "type": "project",
+    "key": "basic-stock-market-app:demo",
+    "url": null,
+    "ok": null
+  }
+]

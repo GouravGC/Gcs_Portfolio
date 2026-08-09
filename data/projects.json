@@ -4,15 +4,33 @@
       "name": "Student Dropout & Academic Success Prediction",
       "id": "student-academic-outcome-prediction",
       "short_description": "Production-ready deep learning system to predict student dropout risk using a modular PyTorch architecture, SHAP explainability, and an interactive Streamlit app.",
-      "category": ["Deep Learning", "Machine Learning", "MLOps", "Explainable AI"],
+      "category": [
+        "Deep Learning",
+        "Machine Learning",
+        "MLOps",
+        "Explainable AI"
+      ],
       "featured": true,
       "problem_statement": "Identify students at risk of dropping out so institutions can intervene early.",
       "dataset": "UCI Machine Learning Repository - Predict Students Dropout and Academic Success",
       "data_size": "4,424 students, 36 features",
-      "preprocessing": ["Categorical encoding", "Standard scaling", "Feature engineering"],
+      "preprocessing": [
+        "Categorical encoding",
+        "Standard scaling",
+        "Feature engineering"
+      ],
       "feature_engineering": [],
-      "models": ["Neural Network (3 hidden layers: 128-64-32)"],
-      "evaluation": ["Accuracy", "Precision", "Recall", "F1 Score", "ROC-AUC", "PR-AUC"],
+      "models": [
+        "Neural Network (3 hidden layers: 128-64-32)"
+      ],
+      "evaluation": [
+        "Accuracy",
+        "Precision",
+        "Recall",
+        "F1 Score",
+        "ROC-AUC",
+        "PR-AUC"
+      ],
       "metrics": {
         "Accuracy": "78.2%",
         "Precision": "64.4%",
@@ -21,39 +39,98 @@
         "ROC AUC": "86.2%",
         "PR AUC": "80.1%"
       },
-      "explainability": ["SHAP"],
-      "deployment": ["Streamlit", "Docker", "Streamlit Community Cloud"],
+      "explainability": [
+        "SHAP"
+      ],
+      "deployment": [
+        "Streamlit",
+        "Docker",
+        "Streamlit Community Cloud"
+      ],
       "architecture": "PyTorch NN (BatchNorm, Dropout 0.3, ReLU, Xavier init) -> Prediction pipeline -> Streamlit (multi-page) -> Cloud",
-      "key_features": ["Single prediction", "Batch prediction (CSV upload)", "EDA & visualizations", "Model analysis & comparison", "SHAP explainability", "Reports & artifacts"],
-      "technical_highlights": ["Batch normalization", "Dropout regularization", "Binary classification (Dropout/Graduate)", "Reproducible config-driven workflow"],
-      "languages": ["Python"],
-      "frameworks": ["PyTorch"],
-      "libraries": ["Streamlit", "SHAP", "scikit-learn", "pandas", "numpy"],
+      "key_features": [
+        "Single prediction",
+        "Batch prediction (CSV upload)",
+        "EDA & visualizations",
+        "Model analysis & comparison",
+        "SHAP explainability",
+        "Reports & artifacts"
+      ],
+      "technical_highlights": [
+        "Batch normalization",
+        "Dropout regularization",
+        "Binary classification (Dropout/Graduate)",
+        "Reproducible config-driven workflow"
+      ],
+      "languages": [
+        "Python"
+      ],
+      "frameworks": [
+        "PyTorch"
+      ],
+      "libraries": [
+        "Streamlit",
+        "SHAP",
+        "scikit-learn",
+        "pandas",
+        "numpy"
+      ],
       "databases": [],
       "ml_algorithms": [],
-      "deep_learning": ["Neural Network", "MLP"],
+      "deep_learning": [
+        "Neural Network",
+        "MLP"
+      ],
       "genai": [],
-      "analytics": ["EDA", "Data preprocessing"],
-      "mlops": ["Config-driven", "Artifacts", "Docker"],
+      "analytics": [
+        "EDA",
+        "Data preprocessing"
+      ],
+      "mlops": [
+        "Config-driven",
+        "Artifacts",
+        "Docker"
+      ],
       "github_url": "https://github.com/GouravGC/Deep-Learning-based-Student-Academic-Outcome-Prediction",
       "live_demo_url": "https://deep-learning-based-student-academic-outcome-prediction.streamlit.app/",
       "deployment_platform": "Streamlit Community Cloud",
       "demo_verified": true,
-      "status": "Deployed"
+      "status": "Deployed",
+      "tier": "featured",
+      "deployment_status": "streamlit_cloud",
+      "verified_live_demo": true
     },
     {
       "name": "Animals-10 Image Classification (AlexNet)",
       "id": "animal-10-classification",
       "short_description": "Production-ready, modular computer vision application classifying 10 animal species with a custom AlexNet architecture, ONNX inference, and Streamlit UI.",
-      "category": ["Computer Vision", "Deep Learning", "MLOps"],
+      "category": [
+        "Computer Vision",
+        "Deep Learning",
+        "MLOps"
+      ],
       "featured": true,
       "problem_statement": "Classify images of animals into 10 classes with a production-grade, reproducible deep learning pipeline.",
       "dataset": "Animals-10 (Kaggle)",
       "data_size": "~26,179 images, 10 classes",
-      "preprocessing": ["Resize to 224x224", "ToTensor", "Normalization (ImageNet mean/std)"],
+      "preprocessing": [
+        "Resize to 224x224",
+        "ToTensor",
+        "Normalization (ImageNet mean/std)"
+      ],
       "feature_engineering": [],
-      "models": ["Custom AlexNet (best)", "LeNet", "MiniCNN"],
-      "evaluation": ["Accuracy", "Precision", "Recall", "F1 Score", "Confusion Matrix"],
+      "models": [
+        "Custom AlexNet (best)",
+        "LeNet",
+        "MiniCNN"
+      ],
+      "evaluation": [
+        "Accuracy",
+        "Precision",
+        "Recall",
+        "F1 Score",
+        "Confusion Matrix"
+      ],
       "metrics": {
         "Test Accuracy": "73.93%",
         "Precision": "0.7390",
@@ -61,38 +138,89 @@
         "F1 Score": "0.7377"
       },
       "explainability": [],
-      "deployment": ["Streamlit", "Streamlit Community Cloud", "ONNX"],
+      "deployment": [
+        "Streamlit",
+        "Streamlit Community Cloud",
+        "ONNX"
+      ],
       "architecture": "Custom AlexNet (Conv->BatchNorm->ReLU->Pool->AdaptiveAvgPool->Flatten->Linear) -> inference pipeline (PyTorch/ONNX) -> Streamlit -> Cloud",
-      "key_features": ["Top-5 predictions", "Backend selection (PyTorch / ONNX)", "Model information", "Loaded notebook outputs (plots, report)"],
-      "technical_highlights": ["Notebook as single source of truth", "Artifact reuse (no retraining)", "Reproducible training pipeline", "ONNX export"],
-      "languages": ["Python"],
-      "frameworks": ["PyTorch"],
-      "libraries": ["torchvision", "Streamlit", "onnxruntime", "pandas", "numpy"],
+      "key_features": [
+        "Top-5 predictions",
+        "Backend selection (PyTorch / ONNX)",
+        "Model information",
+        "Loaded notebook outputs (plots, report)"
+      ],
+      "technical_highlights": [
+        "Notebook as single source of truth",
+        "Artifact reuse (no retraining)",
+        "Reproducible training pipeline",
+        "ONNX export"
+      ],
+      "languages": [
+        "Python"
+      ],
+      "frameworks": [
+        "PyTorch"
+      ],
+      "libraries": [
+        "torchvision",
+        "Streamlit",
+        "onnxruntime",
+        "pandas",
+        "numpy"
+      ],
       "databases": [],
       "ml_algorithms": [],
-      "deep_learning": ["CNN", "AlexNet", "LeNet", "Transfer-ready"],
+      "deep_learning": [
+        "CNN",
+        "AlexNet",
+        "LeNet",
+        "Transfer-ready"
+      ],
       "genai": [],
       "analytics": [],
-      "mlops": ["Reproducibility", "Artifacts", "Validation script"],
+      "mlops": [
+        "Reproducibility",
+        "Artifacts",
+        "Validation script"
+      ],
       "github_url": "https://github.com/GouravGC/animal-10-classification-production",
       "live_demo_url": "https://animal-10-classification-pytorch.streamlit.app/",
       "deployment_platform": "Streamlit Community Cloud",
       "demo_verified": true,
-      "status": "Deployed"
+      "status": "Deployed",
+      "tier": "featured",
+      "deployment_status": "streamlit_cloud",
+      "verified_live_demo": true
     },
     {
       "name": "Human Activity Recognition (Deep Residual MLP)",
       "id": "human-activity-recognition",
       "short_description": "Production-ready deep learning app classifying 6 human activities from smartphone sensor data using a custom Residual MLP with 95.39% accuracy.",
-      "category": ["Deep Learning", "Machine Learning", "Time Series"],
+      "category": [
+        "Deep Learning",
+        "Machine Learning",
+        "Time Series"
+      ],
       "featured": true,
       "problem_statement": "Classify human activities from smartphone accelerometer/gyroscope data.",
       "dataset": "UCI HAR Smartphone Dataset (30 subjects, 561 features)",
       "data_size": "7,352 training / 2,947 test samples",
-      "preprocessing": ["StandardScaler", "Label encoding"],
+      "preprocessing": [
+        "StandardScaler",
+        "Label encoding"
+      ],
       "feature_engineering": [],
-      "models": ["Deep Residual MLP (ResMLP)"],
-      "evaluation": ["Accuracy", "Precision", "Recall", "F1 Score", "Confusion Matrix"],
+      "models": [
+        "Deep Residual MLP (ResMLP)"
+      ],
+      "evaluation": [
+        "Accuracy",
+        "Precision",
+        "Recall",
+        "F1 Score",
+        "Confusion Matrix"
+      ],
       "metrics": {
         "Test Accuracy": "95.39%",
         "Precision (weighted)": "95.52%",
@@ -100,72 +228,188 @@
         "F1 Score (weighted)": "95.36%"
       },
       "explainability": [],
-      "deployment": ["Streamlit", "Streamlit Community Cloud"],
+      "deployment": [
+        "Streamlit",
+        "Streamlit Community Cloud"
+      ],
       "architecture": "561 features -> Linear+BatchNorm+ReLU+Dropout -> 3x ResidualBlock(512) -> Linear(512->256->128->64) -> 6-class Softmax",
-      "key_features": ["Interactive inference", "Model architecture details", "Performance metrics & curves", "Data explorer", "Feature importance"],
-      "technical_highlights": ["Residual connections", "Batch normalization", "Dropout (0.3)", "Xavier initialization", "2.04M parameters"],
-      "languages": ["Python"],
-      "frameworks": ["PyTorch"],
-      "libraries": ["Streamlit", "scikit-learn", "pandas", "numpy", "Plotly"],
+      "key_features": [
+        "Interactive inference",
+        "Model architecture details",
+        "Performance metrics & curves",
+        "Data explorer",
+        "Feature importance"
+      ],
+      "technical_highlights": [
+        "Residual connections",
+        "Batch normalization",
+        "Dropout (0.3)",
+        "Xavier initialization",
+        "2.04M parameters"
+      ],
+      "languages": [
+        "Python"
+      ],
+      "frameworks": [
+        "PyTorch"
+      ],
+      "libraries": [
+        "Streamlit",
+        "scikit-learn",
+        "pandas",
+        "numpy",
+        "Plotly"
+      ],
       "databases": [],
       "ml_algorithms": [],
-      "deep_learning": ["Residual MLP", "MLP"],
+      "deep_learning": [
+        "Residual MLP",
+        "MLP"
+      ],
       "genai": [],
-      "analytics": ["EDA", "Data exploration"],
-      "mlops": ["Artifacts", "Config"],
+      "analytics": [
+        "EDA",
+        "Data exploration"
+      ],
+      "mlops": [
+        "Artifacts",
+        "Config"
+      ],
       "github_url": "https://github.com/GouravGC/Human-activity-recognition-deep-residual-mlp",
       "live_demo_url": "https://human-activity-recognition-deep-residual-mlp.streamlit.app/",
       "deployment_platform": "Streamlit Community Cloud",
       "demo_verified": true,
-      "status": "Deployed"
+      "status": "Deployed",
+      "tier": "featured",
+      "deployment_status": "streamlit_cloud",
+      "verified_live_demo": true
     },
     {
       "name": "End-to-End Credit Card Fraud Detection",
       "id": "fraud-detection",
       "short_description": "Production-ready ML application detecting fraudulent credit card transactions with a modular architecture, imbalanced-data techniques, and real-time Streamlit predictions.",
-      "category": ["Machine Learning", "Supervised Learning", "MLOps", "Deployment"],
+      "category": [
+        "Machine Learning",
+        "Supervised Learning",
+        "MLOps",
+        "Deployment"
+      ],
       "featured": true,
       "problem_statement": "Accurately identify fraudulent credit card transactions while minimizing false positives and preserving high recall in a highly imbalanced problem.",
       "dataset": "Credit Card Fraud Detection Dataset (Kaggle, mlg-ulb)",
       "data_size": "284,807 transactions, 31 columns",
-      "preprocessing": ["Class imbalance handling", "Scaling", "Feature selection"],
+      "preprocessing": [
+        "Class imbalance handling",
+        "Scaling",
+        "Feature selection"
+      ],
       "feature_engineering": [],
-      "models": ["Logistic Regression", "SMOTE/ADASYN/Weighted Logistic Regression", "Random Forest", "Balanced Random Forest", "XGBoost"],
-      "evaluation": ["Precision", "Recall", "F1-Score", "Precision-Recall Curve", "Model Comparison"],
+      "models": [
+        "Logistic Regression",
+        "SMOTE/ADASYN/Weighted Logistic Regression",
+        "Random Forest",
+        "Balanced Random Forest",
+        "XGBoost"
+      ],
+      "evaluation": [
+        "Precision",
+        "Recall",
+        "F1-Score",
+        "Precision-Recall Curve",
+        "Model Comparison"
+      ],
       "metrics": {},
       "explainability": [],
-      "deployment": ["Streamlit", "Streamlit Community Cloud"],
+      "deployment": [
+        "Streamlit",
+        "Streamlit Community Cloud"
+      ],
       "architecture": "ML training & prediction pipelines -> pre-trained model inference -> Streamlit real-time prediction -> Cloud",
-      "key_features": ["Real-time fraud prediction", "Fraud probability", "Transaction summary", "Structured logging & exception handling", "Deployment-ready"],
-      "technical_highlights": ["Imbalanced classification techniques", "Modular architecture", "Reusable model artifacts"],
-      "languages": ["Python"],
-      "frameworks": ["scikit-learn"],
-      "libraries": ["XGBoost", "Streamlit", "Pandas", "NumPy", "Joblib", "imbalanced-learn"],
+      "key_features": [
+        "Real-time fraud prediction",
+        "Fraud probability",
+        "Transaction summary",
+        "Structured logging & exception handling",
+        "Deployment-ready"
+      ],
+      "technical_highlights": [
+        "Imbalanced classification techniques",
+        "Modular architecture",
+        "Reusable model artifacts"
+      ],
+      "languages": [
+        "Python"
+      ],
+      "frameworks": [
+        "scikit-learn"
+      ],
+      "libraries": [
+        "XGBoost",
+        "Streamlit",
+        "Pandas",
+        "NumPy",
+        "Joblib",
+        "imbalanced-learn"
+      ],
       "databases": [],
-      "ml_algorithms": ["Logistic Regression", "Random Forest", "XGBoost"],
+      "ml_algorithms": [
+        "Logistic Regression",
+        "Random Forest",
+        "XGBoost"
+      ],
       "deep_learning": [],
       "genai": [],
-      "analytics": ["EDA"],
-      "mlops": ["Artifacts", "Logging", "Exception handling"],
+      "analytics": [
+        "EDA"
+      ],
+      "mlops": [
+        "Artifacts",
+        "Logging",
+        "Exception handling"
+      ],
       "github_url": "https://github.com/GouravGC/End-To-End-Fraud-Detection-System",
       "live_demo_url": "https://end-to-end-fraud-detection-system-gc.streamlit.app/",
       "deployment_platform": "Streamlit Community Cloud",
       "demo_verified": true,
-      "status": "Deployed"
+      "status": "Deployed",
+      "tier": "featured",
+      "deployment_status": "streamlit_cloud",
+      "verified_live_demo": true
     },
     {
       "name": "Customer Segmentation (Unsupervised Learning)",
       "id": "customer-segmentation",
       "short_description": "End-to-end unsupervised learning application that segments customers using RFM analysis and K-Means clustering, delivered via a production-ready Streamlit app.",
-      "category": ["Machine Learning", "Unsupervised Learning", "Data Analytics"],
+      "category": [
+        "Machine Learning",
+        "Unsupervised Learning",
+        "Data Analytics"
+      ],
       "featured": true,
       "problem_statement": "Segment customers based on purchasing behavior to enable targeted marketing, revenue growth, and churn prevention.",
       "dataset": "UCI Online Retail II dataset",
       "data_size": "Online retail transaction data",
-      "preprocessing": ["RFM extraction", "Log transformation", "StandardScaler"],
-      "feature_engineering": ["Recency", "Frequency", "Monetary"],
-      "models": ["K-Means (k=4)", "Gaussian Mixture Model", "DBSCAN", "Agglomerative"],
-      "evaluation": ["Silhouette Score", "Davies-Bouldin Index", "Calinski-Harabasz Index"],
+      "preprocessing": [
+        "RFM extraction",
+        "Log transformation",
+        "StandardScaler"
+      ],
+      "feature_engineering": [
+        "Recency",
+        "Frequency",
+        "Monetary"
+      ],
+      "models": [
+        "K-Means (k=4)",
+        "Gaussian Mixture Model",
+        "DBSCAN",
+        "Agglomerative"
+      ],
+      "evaluation": [
+        "Silhouette Score",
+        "Davies-Bouldin Index",
+        "Calinski-Harabasz Index"
+      ],
       "metrics": {
         "K-Means Silhouette": "0.331",
         "GMM Silhouette": "0.345",
@@ -173,38 +417,98 @@
         "Agglomerative Silhouette": "0.278"
       },
       "explainability": [],
-      "deployment": ["Streamlit", "Streamlit Community Cloud", "Render", "Railway"],
+      "deployment": [
+        "Streamlit",
+        "Streamlit Community Cloud",
+        "Render",
+        "Railway"
+      ],
       "architecture": "RFM -> Log Transform -> StandardScaler -> K-Means -> cluster assignment -> Streamlit (multi-page)",
-      "key_features": ["RFM input & prediction", "Cluster explorer", "Data insights", "Model comparison", "Visualizations (PCA/t-SNE)", "Download center"],
-      "technical_highlights": ["4 distinct customer segments", "Business interpretation per cluster", "Pre-generated artifacts"],
-      "languages": ["Python"],
-      "frameworks": ["scikit-learn"],
-      "libraries": ["Streamlit", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Joblib"],
+      "key_features": [
+        "RFM input & prediction",
+        "Cluster explorer",
+        "Data insights",
+        "Model comparison",
+        "Visualizations (PCA/t-SNE)",
+        "Download center"
+      ],
+      "technical_highlights": [
+        "4 distinct customer segments",
+        "Business interpretation per cluster",
+        "Pre-generated artifacts"
+      ],
+      "languages": [
+        "Python"
+      ],
+      "frameworks": [
+        "scikit-learn"
+      ],
+      "libraries": [
+        "Streamlit",
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Seaborn",
+        "Joblib"
+      ],
       "databases": [],
-      "ml_algorithms": ["K-Means", "GMM", "DBSCAN", "Agglomerative", "PCA"],
+      "ml_algorithms": [
+        "K-Means",
+        "GMM",
+        "DBSCAN",
+        "Agglomerative",
+        "PCA"
+      ],
       "deep_learning": [],
       "genai": [],
-      "analytics": ["RFM analysis", "Data insights"],
-      "mlops": ["Artifacts", "Config", "OOP design"],
+      "analytics": [
+        "RFM analysis",
+        "Data insights"
+      ],
+      "mlops": [
+        "Artifacts",
+        "Config",
+        "OOP design"
+      ],
       "github_url": "https://github.com/GouravGC/Customer-Segmentation-using-Unsupervised-Learning-End-to-End",
-      "live_demo_url": null,
-      "deployment_platform": null,
-      "demo_verified": false,
-      "status": "Production-ready (no verified live URL)"
+      "live_demo_url": "https://customer-segmentation-using-unsupervised-learning-end-to-end.streamlit.app/",
+      "deployment_platform": "Streamlit Community Cloud",
+      "demo_verified": true,
+      "status": "Deployed",
+      "tier": "featured",
+      "deployment_status": "streamlit_cloud",
+      "verified_live_demo": true
     },
     {
       "name": "Electricity Consumption Forecasting (Vanilla RNN)",
       "id": "electricity-forecasting-rnn",
       "short_description": "Production-ready, inference-only time-series forecasting app for hourly household electricity consumption using a Vanilla RNN (PyTorch) with MLflow experiment tracking.",
-      "category": ["Time Series", "Deep Learning", "MLOps"],
+      "category": [
+        "Time Series",
+        "Deep Learning",
+        "MLOps"
+      ],
       "featured": true,
       "problem_statement": "Forecast next-hour household electricity consumption using a recurrent neural network.",
       "dataset": "Hourly household electricity consumption dataset",
       "data_size": "Hourly time-series data",
-      "preprocessing": ["Datetime parsing", "Missing-value interpolation", "Hourly resampling", "MinMaxScaler", "24-hour sliding windows"],
+      "preprocessing": [
+        "Datetime parsing",
+        "Missing-value interpolation",
+        "Hourly resampling",
+        "MinMaxScaler",
+        "24-hour sliding windows"
+      ],
       "feature_engineering": [],
-      "models": ["Vanilla RNN"],
-      "evaluation": ["MAE", "RMSE", "MAPE", "R²"],
+      "models": [
+        "Vanilla RNN"
+      ],
+      "evaluation": [
+        "MAE",
+        "RMSE",
+        "MAPE",
+        "R²"
+      ],
       "metrics": {
         "MAE": "0.413 kW",
         "RMSE": "0.524 kW",
@@ -212,38 +516,91 @@
         "R²": "0.446"
       },
       "explainability": [],
-      "deployment": ["Streamlit", "MLflow"],
+      "deployment": [
+        "Streamlit",
+        "MLflow"
+      ],
       "architecture": "24-hour window -> MinMaxScaler -> VanillaRNN (hidden 64, 1 layer) -> inverse-scale -> forecast (kW)",
-      "key_features": ["Live multi-hour forecasting", "Single-step prediction", "EDA", "Training results", "Metrics", "MLflow experiment viewer"],
-      "technical_highlights": ["Inference-only (no retraining)", "Artifact reuse", "MLflow experiment tracking", "Window size 24h, lr 1e-3"],
-      "languages": ["Python"],
-      "frameworks": ["PyTorch"],
-      "libraries": ["Streamlit", "Plotly", "pandas", "scikit-learn", "MLflow"],
+      "key_features": [
+        "Live multi-hour forecasting",
+        "Single-step prediction",
+        "EDA",
+        "Training results",
+        "Metrics",
+        "MLflow experiment viewer"
+      ],
+      "technical_highlights": [
+        "Inference-only (no retraining)",
+        "Artifact reuse",
+        "MLflow experiment tracking",
+        "Window size 24h, lr 1e-3"
+      ],
+      "languages": [
+        "Python"
+      ],
+      "frameworks": [
+        "PyTorch"
+      ],
+      "libraries": [
+        "Streamlit",
+        "Plotly",
+        "pandas",
+        "scikit-learn",
+        "MLflow"
+      ],
       "databases": [],
       "ml_algorithms": [],
-      "deep_learning": ["RNN", "Vanilla RNN"],
+      "deep_learning": [
+        "RNN",
+        "Vanilla RNN"
+      ],
       "genai": [],
-      "analytics": ["EDA", "Resampling"],
-      "mlops": ["MLflow", "Experiment tracking", "Artifacts"],
+      "analytics": [
+        "EDA",
+        "Resampling"
+      ],
+      "mlops": [
+        "MLflow",
+        "Experiment tracking",
+        "Artifacts"
+      ],
       "github_url": "https://github.com/GouravGC/Electricity-Consumption-Forecasting-RNN",
-      "live_demo_url": null,
-      "deployment_platform": null,
-      "demo_verified": false,
-      "status": "Production-ready (no verified live URL)"
+      "live_demo_url": "https://electricity-consumption-forecasting-rnn.streamlit.app/",
+      "deployment_platform": "Streamlit Community Cloud",
+      "demo_verified": true,
+      "status": "Deployed",
+      "tier": "featured",
+      "deployment_status": "streamlit_cloud",
+      "verified_live_demo": true
     },
     {
       "name": "Market Basket Analysis & Product Recommendation",
       "id": "market-basket-analysis",
       "short_description": "End-to-end unsupervised ML project performing Market Basket Analysis and building a product recommendation system using Apriori & FP-Growth association rule mining.",
-      "category": ["Recommendation Systems", "Machine Learning", "Data Analytics"],
+      "category": [
+        "Recommendation Systems",
+        "Machine Learning",
+        "Data Analytics"
+      ],
       "featured": true,
       "problem_statement": "Discover hidden purchase patterns and generate intelligent cross-sell recommendations from transactional data.",
       "dataset": "UCI Online Retail Dataset",
       "data_size": "541,909 raw rows; 524,878 cleaned; 19,960 transactions; 4,026 products",
-      "preprocessing": ["Data cleaning", "Transaction aggregation"],
+      "preprocessing": [
+        "Data cleaning",
+        "Transaction aggregation"
+      ],
       "feature_engineering": [],
-      "models": ["Apriori", "FP-Growth", "Association Rules"],
-      "evaluation": ["Support", "Confidence", "Lift"],
+      "models": [
+        "Apriori",
+        "FP-Growth",
+        "Association Rules"
+      ],
+      "evaluation": [
+        "Support",
+        "Confidence",
+        "Lift"
+      ],
       "metrics": {
         "Total Rules": "176",
         "Strong Rules (conf>=0.5, lift>=1.2)": "96",
@@ -252,38 +609,97 @@
         "Maximum Lift": "18.40"
       },
       "explainability": [],
-      "deployment": ["Streamlit", "Streamlit Community Cloud", "Render", "Railway"],
+      "deployment": [
+        "Streamlit",
+        "Streamlit Community Cloud",
+        "Render",
+        "Railway"
+      ],
       "architecture": "Transactions -> Apriori/FP-Growth -> association rules -> RecommendationScore = Lift x Confidence -> ranked recommendations",
-      "key_features": ["Interactive product recommendations", "Association rules explorer", "Frequent itemsets viewer", "Data insights dashboard", "16 pre-generated charts", "Download center"],
-      "technical_highlights": ["Recommendation scoring (Lift x Confidence)", "176+ rules", "NetworkX recommendation graph"],
-      "languages": ["Python"],
-      "frameworks": ["mlxtend"],
-      "libraries": ["Streamlit", "Pandas", "NumPy", "Matplotlib", "Plotly", "NetworkX"],
+      "key_features": [
+        "Interactive product recommendations",
+        "Association rules explorer",
+        "Frequent itemsets viewer",
+        "Data insights dashboard",
+        "16 pre-generated charts",
+        "Download center"
+      ],
+      "technical_highlights": [
+        "Recommendation scoring (Lift x Confidence)",
+        "176+ rules",
+        "NetworkX recommendation graph"
+      ],
+      "languages": [
+        "Python"
+      ],
+      "frameworks": [
+        "mlxtend"
+      ],
+      "libraries": [
+        "Streamlit",
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Plotly",
+        "NetworkX"
+      ],
       "databases": [],
-      "ml_algorithms": ["Association Rule Mining", "Apriori", "FP-Growth"],
+      "ml_algorithms": [
+        "Association Rule Mining",
+        "Apriori",
+        "FP-Growth"
+      ],
       "deep_learning": [],
       "genai": [],
-      "analytics": ["Transaction analysis", "Data insights"],
-      "mlops": ["Artifacts", "Config"],
+      "analytics": [
+        "Transaction analysis",
+        "Data insights"
+      ],
+      "mlops": [
+        "Artifacts",
+        "Config"
+      ],
       "github_url": "https://github.com/GouravGC/Market-Basket-Analysis-Product-Recommendation",
-      "live_demo_url": null,
-      "deployment_platform": null,
-      "demo_verified": false,
-      "status": "Production-ready (no verified live URL)"
+      "live_demo_url": "https://market-basket-analysis-recommendation.streamlit.app/",
+      "deployment_platform": "Streamlit Community Cloud",
+      "demo_verified": true,
+      "status": "Deployed",
+      "tier": "featured",
+      "deployment_status": "streamlit_cloud",
+      "verified_live_demo": true
     },
     {
       "name": "Loan Default Prediction",
       "id": "loan-default-predictor",
       "short_description": "Production-ready ML solution predicting loan defaults using an Optuna-optimized CatBoost classifier with SHAP explainability and a multi-page Streamlit app.",
-      "category": ["Machine Learning", "Supervised Learning", "Explainable AI", "Deployment"],
+      "category": [
+        "Machine Learning",
+        "Supervised Learning",
+        "Explainable AI",
+        "Deployment"
+      ],
       "featured": true,
       "problem_statement": "Predict whether a loan applicant is likely to default to enable informed lending decisions and reduce credit risk.",
       "dataset": "Kaggle Loan Default Dataset",
       "data_size": "255,347 records, 17 features",
-      "preprocessing": ["Median imputation", "StandardScaler", "Ordinal encoding", "Optimized threshold (0.30)"],
+      "preprocessing": [
+        "Median imputation",
+        "StandardScaler",
+        "Ordinal encoding",
+        "Optimized threshold (0.30)"
+      ],
       "feature_engineering": [],
-      "models": ["CatBoost Classifier (Optuna-tuned)"],
-      "evaluation": ["Accuracy", "ROC-AUC", "PR-AUC", "Recall", "Precision", "F1-Score"],
+      "models": [
+        "CatBoost Classifier (Optuna-tuned)"
+      ],
+      "evaluation": [
+        "Accuracy",
+        "ROC-AUC",
+        "PR-AUC",
+        "Recall",
+        "Precision",
+        "F1-Score"
+      ],
       "metrics": {
         "Accuracy": "79%",
         "ROC-AUC": "0.7596",
@@ -292,39 +708,99 @@
         "Precision (Default)": "29%",
         "F1-Score (Default)": "0.37"
       },
-      "explainability": ["SHAP (TreeExplainer)"],
-      "deployment": ["Streamlit", "Streamlit Community Cloud", "Render", "Railway"],
+      "explainability": [
+        "SHAP (TreeExplainer)"
+      ],
+      "deployment": [
+        "Streamlit",
+        "Streamlit Community Cloud",
+        "Render",
+        "Railway"
+      ],
       "architecture": "Preprocessing pipeline -> CatBoost (Optuna) -> threshold 0.30 -> Streamlit multi-page -> Cloud",
-      "key_features": ["Real-time predictions", "SHAP explainability", "Prediction history (CSV/JSON export)", "Visualizations", "Cached artifact loading"],
-      "technical_highlights": ["Optuna hyperparameter optimization", "Optimized decision threshold", "Feature importance (CreditScore 21.5%, InterestRate 18.2%)"],
-      "languages": ["Python"],
-      "frameworks": ["CatBoost"],
-      "libraries": ["scikit-learn", "Optuna", "SHAP", "Streamlit", "Pandas", "NumPy", "Joblib"],
+      "key_features": [
+        "Real-time predictions",
+        "SHAP explainability",
+        "Prediction history (CSV/JSON export)",
+        "Visualizations",
+        "Cached artifact loading"
+      ],
+      "technical_highlights": [
+        "Optuna hyperparameter optimization",
+        "Optimized decision threshold",
+        "Feature importance (CreditScore 21.5%, InterestRate 18.2%)"
+      ],
+      "languages": [
+        "Python"
+      ],
+      "frameworks": [
+        "CatBoost"
+      ],
+      "libraries": [
+        "scikit-learn",
+        "Optuna",
+        "SHAP",
+        "Streamlit",
+        "Pandas",
+        "NumPy",
+        "Joblib"
+      ],
       "databases": [],
-      "ml_algorithms": ["CatBoost", "Gradient Boosting"],
+      "ml_algorithms": [
+        "CatBoost",
+        "Gradient Boosting"
+      ],
       "deep_learning": [],
       "genai": [],
-      "analytics": ["EDA"],
-      "mlops": ["Config", "Artifacts", "Logging"],
+      "analytics": [
+        "EDA"
+      ],
+      "mlops": [
+        "Config",
+        "Artifacts",
+        "Logging"
+      ],
       "github_url": "https://github.com/GouravGC/Loan-Default-Predictor",
       "live_demo_url": "https://loan-default-predictor-gc.streamlit.app/",
       "deployment_platform": "Streamlit Community Cloud",
       "demo_verified": true,
-      "status": "Deployed"
+      "status": "Deployed",
+      "tier": "featured",
+      "deployment_status": "streamlit_cloud",
+      "verified_live_demo": true
     },
     {
       "name": "Insurance Cross-Sell NoSQL Analytics",
       "id": "insurance-cross-sell",
       "short_description": "End-to-end ML and NoSQL analytics project combining MongoDB aggregation pipelines, customer analytics, feature engineering, and XGBoost to identify customers likely to purchase vehicle insurance.",
-      "category": ["Machine Learning", "Data Analytics", "Databases", "Deployment"],
+      "category": [
+        "Machine Learning",
+        "Data Analytics",
+        "Databases",
+        "Deployment"
+      ],
       "featured": true,
       "problem_statement": "Identify customers most likely to be interested in purchasing vehicle insurance to enable efficient marketing targeting.",
       "dataset": "Insurance cross-sell customer dataset",
       "data_size": "381,109 customer records, 10 features",
-      "preprocessing": ["Label encoding", "Standard scaling", "Train-test split 80:20"],
+      "preprocessing": [
+        "Label encoding",
+        "Standard scaling",
+        "Train-test split 80:20"
+      ],
       "feature_engineering": [],
-      "models": ["Logistic Regression", "Random Forest", "XGBoost (deployed)"],
-      "evaluation": ["Accuracy", "Precision", "Recall", "F1 Score", "ROC-AUC"],
+      "models": [
+        "Logistic Regression",
+        "Random Forest",
+        "XGBoost (deployed)"
+      ],
+      "evaluation": [
+        "Accuracy",
+        "Precision",
+        "Recall",
+        "F1 Score",
+        "ROC-AUC"
+      ],
       "metrics": {
         "XGBoost ROC-AUC": "0.8556",
         "XGBoost Accuracy": "0.8765",
@@ -332,410 +808,941 @@
         "Logistic Regression ROC-AUC": "0.8225"
       },
       "explainability": [],
-      "deployment": ["Streamlit", "Streamlit Community Cloud", "Render", "Railway"],
+      "deployment": [
+        "Streamlit",
+        "Streamlit Community Cloud",
+        "Render",
+        "Railway"
+      ],
       "architecture": "Pandas cleaning -> MongoDB/MongoMock aggregation -> feature engineering -> XGBoost -> Streamlit prediction -> Cloud",
-      "key_features": ["Real-time prediction", "Model info & comparison", "Data insights", "Visualizations", "Metrics", "Download center"],
-      "technical_highlights": ["NoSQL (MongoDB) aggregation pipelines", "XGBoost selected for ROC-AUC + lightweight footprint (~2 MB)", "Imbalanced target (~12% positive)"],
-      "languages": ["Python"],
-      "frameworks": ["scikit-learn"],
-      "libraries": ["XGBoost", "PyMongo", "MongoMock", "Streamlit", "Pandas", "NumPy", "Joblib"],
-      "databases": ["MongoDB"],
-      "ml_algorithms": ["Logistic Regression", "Random Forest", "XGBoost"],
+      "key_features": [
+        "Real-time prediction",
+        "Model info & comparison",
+        "Data insights",
+        "Visualizations",
+        "Metrics",
+        "Download center"
+      ],
+      "technical_highlights": [
+        "NoSQL (MongoDB) aggregation pipelines",
+        "XGBoost selected for ROC-AUC + lightweight footprint (~2 MB)",
+        "Imbalanced target (~12% positive)"
+      ],
+      "languages": [
+        "Python"
+      ],
+      "frameworks": [
+        "scikit-learn"
+      ],
+      "libraries": [
+        "XGBoost",
+        "PyMongo",
+        "MongoMock",
+        "Streamlit",
+        "Pandas",
+        "NumPy",
+        "Joblib"
+      ],
+      "databases": [
+        "MongoDB"
+      ],
+      "ml_algorithms": [
+        "Logistic Regression",
+        "Random Forest",
+        "XGBoost"
+      ],
       "deep_learning": [],
       "genai": [],
-      "analytics": ["Customer analytics", "NoSQL analytics"],
-      "mlops": ["Artifacts", "Config", "Logging"],
+      "analytics": [
+        "Customer analytics",
+        "NoSQL analytics"
+      ],
+      "mlops": [
+        "Artifacts",
+        "Config",
+        "Logging"
+      ],
       "github_url": "https://github.com/GouravGC/Insurance-Cross-Sell-NoSQL-Analytics",
       "live_demo_url": "https://insurance-cross-sell-nosql-analytics.streamlit.app/",
       "deployment_platform": "Streamlit Community Cloud",
       "demo_verified": true,
-      "status": "Deployed"
+      "status": "Deployed",
+      "tier": "featured",
+      "deployment_status": "streamlit_cloud",
+      "verified_live_demo": true
     },
     {
       "name": "Retail Data Warehouse Analytics",
       "id": "retail-data-warehouse-analytics",
       "short_description": "End-to-end SQL + ML retail analytics pipeline using the Olist Brazilian E-Commerce dataset, covering relational database creation, advanced SQL analytics, feature engineering, modeling, and SHAP explainability.",
-      "category": ["Data Analytics", "SQL", "Machine Learning", "Business Intelligence"],
+      "category": [
+        "Data Analytics",
+        "SQL",
+        "Machine Learning",
+        "Business Intelligence"
+      ],
       "featured": true,
       "problem_statement": "Build a retail analytics pipeline that combines SQL-based warehouse analytics with machine learning to predict high-value customers.",
       "dataset": "Olist Brazilian E-Commerce Public Dataset",
       "data_size": "~100k orders (2016-2018)",
-      "preprocessing": ["Data cleaning", "Dtype conversion", "Missing-value analysis"],
-      "feature_engineering": ["Recency", "Frequency", "Monetary (RFM)", "Freight ratios", "Product scores"],
-      "models": ["Logistic Regression", "Random Forest (tuned)", "XGBoost"],
-      "evaluation": ["ROC-AUC", "Confusion Matrix", "Feature Importance"],
+      "preprocessing": [
+        "Data cleaning",
+        "Dtype conversion",
+        "Missing-value analysis"
+      ],
+      "feature_engineering": [
+        "Recency",
+        "Frequency",
+        "Monetary (RFM)",
+        "Freight ratios",
+        "Product scores"
+      ],
+      "models": [
+        "Logistic Regression",
+        "Random Forest (tuned)",
+        "XGBoost"
+      ],
+      "evaluation": [
+        "ROC-AUC",
+        "Confusion Matrix",
+        "Feature Importance"
+      ],
       "metrics": {
         "Best Model": "Tuned Random Forest (ROC AUC ~1.0 on test set)"
       },
-      "explainability": ["SHAP"],
-      "deployment": ["Streamlit", "SQLite", "Streamlit Community Cloud"],
+      "explainability": [
+        "SHAP"
+      ],
+      "deployment": [
+        "Streamlit",
+        "SQLite",
+        "Streamlit Community Cloud"
+      ],
       "architecture": "Data ingestion -> preprocessing -> SQLite/advanced SQL -> feature engineering -> model training -> SHAP -> Streamlit prediction",
-      "key_features": ["SQL + Python analytics", "SQLite database", "High-value customer classification", "Probability & confidence", "EDA visualizations", "SHAP explainability"],
-      "technical_highlights": ["Relational database creation", "Advanced SQL analytics", "RFM feature engineering (V2)", "SHAP plots"],
-      "languages": ["Python", "SQL"],
-      "frameworks": ["SQLite"],
-      "libraries": ["scikit-learn", "Streamlit", "Pandas", "SHAP", "XGBoost"],
-      "databases": ["SQLite"],
-      "ml_algorithms": ["Logistic Regression", "Random Forest", "XGBoost"],
+      "key_features": [
+        "SQL + Python analytics",
+        "SQLite database",
+        "High-value customer classification",
+        "Probability & confidence",
+        "EDA visualizations",
+        "SHAP explainability"
+      ],
+      "technical_highlights": [
+        "Relational database creation",
+        "Advanced SQL analytics",
+        "RFM feature engineering (V2)",
+        "SHAP plots"
+      ],
+      "languages": [
+        "Python",
+        "SQL"
+      ],
+      "frameworks": [
+        "SQLite"
+      ],
+      "libraries": [
+        "scikit-learn",
+        "Streamlit",
+        "Pandas",
+        "SHAP",
+        "XGBoost"
+      ],
+      "databases": [
+        "SQLite"
+      ],
+      "ml_algorithms": [
+        "Logistic Regression",
+        "Random Forest",
+        "XGBoost"
+      ],
       "deep_learning": [],
       "genai": [],
-      "analytics": ["SQL analytics", "EDA", "RFM"],
-      "mlops": ["Config", "Artifacts", "Pipeline"],
+      "analytics": [
+        "SQL analytics",
+        "EDA",
+        "RFM"
+      ],
+      "mlops": [
+        "Config",
+        "Artifacts",
+        "Pipeline"
+      ],
       "github_url": "https://github.com/GouravGC/Retail-Data-Warehouse-Analytics",
       "live_demo_url": "https://retail-data-warehouse-analytics.streamlit.app/",
       "deployment_platform": "Streamlit Community Cloud",
       "demo_verified": true,
-      "status": "Deployed"
+      "status": "Deployed",
+      "tier": "featured",
+      "deployment_status": "streamlit_cloud",
+      "verified_live_demo": true
     },
     {
       "name": "End-to-End Customer Churn Prediction",
       "id": "customer-churn-prediction",
       "short_description": "End-to-end ML project combining SQL-based analysis, EDA, feature engineering, model training, and Streamlit deployment to predict customer churn.",
-      "category": ["Machine Learning", "SQL", "Data Analytics", "Deployment"],
+      "category": [
+        "Machine Learning",
+        "SQL",
+        "Data Analytics",
+        "Deployment"
+      ],
       "featured": true,
       "problem_statement": "Predict whether a customer is likely to churn based on historical customer information to enable proactive retention.",
       "dataset": "Customer churn dataset (demographics, services, billing)",
       "data_size": "Customer-level records",
-      "preprocessing": ["Missing value handling", "Categorical encoding", "Feature scaling"],
+      "preprocessing": [
+        "Missing value handling",
+        "Categorical encoding",
+        "Feature scaling"
+      ],
       "feature_engineering": [],
-      "models": ["Logistic Regression", "Decision Tree", "Random Forest", "Gradient Boosting", "XGBoost"],
-      "evaluation": ["Accuracy", "Precision", "Recall", "F1 Score", "ROC-AUC"],
+      "models": [
+        "Logistic Regression",
+        "Decision Tree",
+        "Random Forest",
+        "Gradient Boosting",
+        "XGBoost"
+      ],
+      "evaluation": [
+        "Accuracy",
+        "Precision",
+        "Recall",
+        "F1 Score",
+        "ROC-AUC"
+      ],
       "metrics": {},
       "explainability": [],
-      "deployment": ["Streamlit", "Streamlit Community Cloud"],
+      "deployment": [
+        "Streamlit",
+        "Streamlit Community Cloud"
+      ],
       "architecture": "Raw data -> SQL analysis -> EDA -> feature engineering -> model training -> artifact generation -> prediction pipeline -> Streamlit -> Cloud",
-      "key_features": ["SQL-based data analysis", "EDA & reporting", "Real-time churn prediction", "Production-style structure"],
-      "technical_highlights": ["SQL for analytical insights", "Classification model experimentation", "Artifact generation & reproducibility"],
-      "languages": ["Python", "SQL"],
-      "frameworks": ["scikit-learn"],
-      "libraries": ["XGBoost", "Streamlit", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
-      "databases": ["SQLite"],
-      "ml_algorithms": ["Logistic Regression", "Decision Tree", "Random Forest", "Gradient Boosting", "XGBoost"],
+      "key_features": [
+        "SQL-based data analysis",
+        "EDA & reporting",
+        "Real-time churn prediction",
+        "Production-style structure"
+      ],
+      "technical_highlights": [
+        "SQL for analytical insights",
+        "Classification model experimentation",
+        "Artifact generation & reproducibility"
+      ],
+      "languages": [
+        "Python",
+        "SQL"
+      ],
+      "frameworks": [
+        "scikit-learn"
+      ],
+      "libraries": [
+        "XGBoost",
+        "Streamlit",
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Seaborn"
+      ],
+      "databases": [
+        "SQLite"
+      ],
+      "ml_algorithms": [
+        "Logistic Regression",
+        "Decision Tree",
+        "Random Forest",
+        "Gradient Boosting",
+        "XGBoost"
+      ],
       "deep_learning": [],
       "genai": [],
-      "analytics": ["SQL analysis", "EDA"],
-      "mlops": ["Artifacts", "Pipeline"],
+      "analytics": [
+        "SQL analysis",
+        "EDA"
+      ],
+      "mlops": [
+        "Artifacts",
+        "Pipeline"
+      ],
       "github_url": "https://github.com/GouravGC/End-to-End-Customer-Churn-Prediction",
       "live_demo_url": "https://end-to-end-customer-churn-prediction-gc.streamlit.app/",
       "deployment_platform": "Streamlit Community Cloud",
       "demo_verified": true,
-      "status": "Deployed"
+      "status": "Deployed",
+      "tier": "featured",
+      "deployment_status": "streamlit_cloud",
+      "verified_live_demo": true
     },
     {
       "name": "Concrete Strength Predictor",
       "id": "concrete-strength-predictor",
       "short_description": "End-to-end ML regression application predicting concrete compressive strength, integrated with a Flask web app and deployed on Render.",
-      "category": ["Machine Learning", "Regression", "Deployment", "MLOps"],
+      "category": [
+        "Machine Learning",
+        "Regression",
+        "Deployment",
+        "MLOps"
+      ],
       "featured": true,
       "problem_statement": "Develop a regression model that predicts concrete compressive strength from material composition and curing age.",
       "dataset": "Concrete compressive strength dataset",
       "data_size": "Concrete mixture records",
-      "preprocessing": ["Missing value handling (SimpleImputer)", "Feature scaling (StandardScaler)", "Pipeline"],
+      "preprocessing": [
+        "Missing value handling (SimpleImputer)",
+        "Feature scaling (StandardScaler)",
+        "Pipeline"
+      ],
       "feature_engineering": [],
-      "models": ["Linear/Ridge/Lasso Regression", "Decision Tree", "Random Forest", "Gradient Boosting", "XGBoost Regressor"],
-      "evaluation": ["MAE", "MSE", "RMSE", "R²"],
+      "models": [
+        "Linear/Ridge/Lasso Regression",
+        "Decision Tree",
+        "Random Forest",
+        "Gradient Boosting",
+        "XGBoost Regressor"
+      ],
+      "evaluation": [
+        "MAE",
+        "MSE",
+        "RMSE",
+        "R²"
+      ],
       "metrics": {},
       "explainability": [],
-      "deployment": ["Flask", "Render"],
+      "deployment": [
+        "Flask",
+        "Render"
+      ],
       "architecture": "Data -> preprocessing -> model training -> model.pkl/preprocessing.pkl -> Flask app -> Render",
-      "key_features": ["Real-time prediction", "Flask web app", "Cloud deployment", "Production-style structure"],
-      "technical_highlights": ["Full ML lifecycle", "Automated preprocessing pipeline", "Flask + Render deployment"],
-      "languages": ["Python"],
-      "frameworks": ["Flask"],
-      "libraries": ["scikit-learn", "Pandas", "NumPy"],
+      "key_features": [
+        "Real-time prediction",
+        "Flask web app",
+        "Cloud deployment",
+        "Production-style structure"
+      ],
+      "technical_highlights": [
+        "Full ML lifecycle",
+        "Automated preprocessing pipeline",
+        "Flask + Render deployment"
+      ],
+      "languages": [
+        "Python"
+      ],
+      "frameworks": [
+        "Flask"
+      ],
+      "libraries": [
+        "scikit-learn",
+        "Pandas",
+        "NumPy"
+      ],
       "databases": [],
-      "ml_algorithms": ["Linear Regression", "Ridge", "Lasso", "Decision Tree", "Random Forest", "Gradient Boosting", "XGBoost"],
+      "ml_algorithms": [
+        "Linear Regression",
+        "Ridge",
+        "Lasso",
+        "Decision Tree",
+        "Random Forest",
+        "Gradient Boosting",
+        "XGBoost"
+      ],
       "deep_learning": [],
       "genai": [],
-      "analytics": ["EDA"],
-      "mlops": ["Artifacts", "Pipeline"],
+      "analytics": [
+        "EDA"
+      ],
+      "mlops": [
+        "Artifacts",
+        "Pipeline"
+      ],
       "github_url": "https://github.com/GouravGC/End-To-End-Concrete-Strength-Predictor",
       "live_demo_url": "https://end-to-end-concrete-strength-predictor.onrender.com/",
       "deployment_platform": "Render",
       "demo_verified": true,
-      "status": "Deployed"
+      "status": "Deployed",
+      "tier": "featured",
+      "deployment_status": "flask_api",
+      "verified_live_demo": true
     },
     {
       "name": "Student Performance Predictor",
       "id": "student-performance-predictor",
       "short_description": "End-to-end ML regression application predicting a student's Mathematics Score, integrated with a Flask web app and deployed on Render.",
-      "category": ["Machine Learning", "Regression", "Deployment", "Data Analytics"],
+      "category": [
+        "Machine Learning",
+        "Regression",
+        "Deployment",
+        "Data Analytics"
+      ],
       "featured": true,
       "problem_statement": "Build a regression system predicting a student's Mathematics Score from academic and demographic features.",
       "dataset": "Student Performance Dataset",
       "data_size": "Student records (academic & demographic)",
-      "preprocessing": ["Missing value handling", "OneHotEncoding", "StandardScaler", "ColumnTransformer"],
+      "preprocessing": [
+        "Missing value handling",
+        "OneHotEncoding",
+        "StandardScaler",
+        "ColumnTransformer"
+      ],
       "feature_engineering": [],
-      "models": ["Linear/Ridge/Lasso Regression", "Decision Tree", "Random Forest", "Gradient Boosting", "XGBoost Regressor"],
-      "evaluation": ["MAE", "MSE", "RMSE", "R²"],
+      "models": [
+        "Linear/Ridge/Lasso Regression",
+        "Decision Tree",
+        "Random Forest",
+        "Gradient Boosting",
+        "XGBoost Regressor"
+      ],
+      "evaluation": [
+        "MAE",
+        "MSE",
+        "RMSE",
+        "R²"
+      ],
       "metrics": {},
       "explainability": [],
-      "deployment": ["Flask", "Render"],
+      "deployment": [
+        "Flask",
+        "Render"
+      ],
       "architecture": "Data -> preprocessing -> model training -> model.pkl/preprocessing.pkl -> Flask app -> Render",
-      "key_features": ["Real-time predictions", "Flask web interface", "Cloud deployment", "Production-style structure"],
-      "technical_highlights": ["Full ML lifecycle", "Automated transformation pipeline"],
-      "languages": ["Python"],
-      "frameworks": ["Flask"],
-      "libraries": ["scikit-learn", "Pandas", "NumPy"],
+      "key_features": [
+        "Real-time predictions",
+        "Flask web interface",
+        "Cloud deployment",
+        "Production-style structure"
+      ],
+      "technical_highlights": [
+        "Full ML lifecycle",
+        "Automated transformation pipeline"
+      ],
+      "languages": [
+        "Python"
+      ],
+      "frameworks": [
+        "Flask"
+      ],
+      "libraries": [
+        "scikit-learn",
+        "Pandas",
+        "NumPy"
+      ],
       "databases": [],
-      "ml_algorithms": ["Linear Regression", "Ridge", "Lasso", "Decision Tree", "Random Forest", "Gradient Boosting", "XGBoost"],
+      "ml_algorithms": [
+        "Linear Regression",
+        "Ridge",
+        "Lasso",
+        "Decision Tree",
+        "Random Forest",
+        "Gradient Boosting",
+        "XGBoost"
+      ],
       "deep_learning": [],
       "genai": [],
-      "analytics": ["EDA"],
-      "mlops": ["Artifacts", "Pipeline"],
+      "analytics": [
+        "EDA"
+      ],
+      "mlops": [
+        "Artifacts",
+        "Pipeline"
+      ],
       "github_url": "https://github.com/GouravGC/End-to-End-Student-Performance-Predictor-App",
       "live_demo_url": "https://end-to-end-student-performance-predictor-t4pc.onrender.com/",
       "deployment_platform": "Render",
       "demo_verified": true,
-      "status": "Deployed"
+      "status": "Deployed",
+      "tier": "featured",
+      "deployment_status": "flask_api",
+      "verified_live_demo": true
     },
     {
       "name": "Hospital 30-Day Readmission Prediction",
       "id": "hospital-readmissions",
       "short_description": "End-to-end ML binary classification predicting 30-day hospital readmission risk using XGBoost with one-hot encoding, SHAP, and a professional Streamlit app.",
-      "category": ["Machine Learning", "Healthcare", "Supervised Learning", "Explainable AI"],
+      "category": [
+        "Machine Learning",
+        "Healthcare",
+        "Supervised Learning",
+        "Explainable AI"
+      ],
       "featured": true,
       "problem_statement": "Predict the probability of a patient being readmitted to hospital within 30 days of discharge to enable targeted follow-up care and avoid financial penalties.",
       "dataset": "UCI Diabetes 130-US Hospitals (1999-2008)",
       "data_size": "~100,000+ patient encounters, 42 features",
-      "preprocessing": ["One-Hot Encoding", "Class imbalance handling (~11% readmission)"],
+      "preprocessing": [
+        "One-Hot Encoding",
+        "Class imbalance handling (~11% readmission)"
+      ],
       "feature_engineering": [],
-      "models": ["XGBoost Classifier"],
-      "evaluation": ["ROC-AUC", "PR-AUC", "Recall", "F1", "Confusion Matrix"],
+      "models": [
+        "XGBoost Classifier"
+      ],
+      "evaluation": [
+        "ROC-AUC",
+        "PR-AUC",
+        "Recall",
+        "F1",
+        "Confusion Matrix"
+      ],
       "metrics": {
         "ROC-AUC": "0.6867",
         "PR-AUC": "0.2362",
         "Decision Threshold": "0.15 (optimized for F1)"
       },
-      "explainability": ["SHAP"],
-      "deployment": ["Streamlit", "Streamlit Community Cloud", "Render", "Railway"],
+      "explainability": [
+        "SHAP"
+      ],
+      "deployment": [
+        "Streamlit",
+        "Streamlit Community Cloud",
+        "Render",
+        "Railway"
+      ],
       "architecture": "Preprocessing -> One-Hot Encoding -> XGBoost -> threshold 0.15 -> Streamlit (multi-page, inference-only)",
-      "key_features": ["Patient input form", "Risk badges", "Data insights", "Model performance", "Visualizations", "Download center"],
-      "technical_highlights": ["Inference-only app", "Threshold sweep for F1", "Modular architecture, cached loading", "2,355 features after transform"],
-      "languages": ["Python"],
-      "frameworks": ["scikit-learn"],
-      "libraries": ["XGBoost", "Streamlit", "Pandas", "NumPy", "SHAP", "Joblib"],
+      "key_features": [
+        "Patient input form",
+        "Risk badges",
+        "Data insights",
+        "Model performance",
+        "Visualizations",
+        "Download center"
+      ],
+      "technical_highlights": [
+        "Inference-only app",
+        "Threshold sweep for F1",
+        "Modular architecture, cached loading",
+        "2,355 features after transform"
+      ],
+      "languages": [
+        "Python"
+      ],
+      "frameworks": [
+        "scikit-learn"
+      ],
+      "libraries": [
+        "XGBoost",
+        "Streamlit",
+        "Pandas",
+        "NumPy",
+        "SHAP",
+        "Joblib"
+      ],
       "databases": [],
-      "ml_algorithms": ["XGBoost"],
+      "ml_algorithms": [
+        "XGBoost"
+      ],
       "deep_learning": [],
       "genai": [],
-      "analytics": ["EDA", "Data insights"],
-      "mlops": ["Config", "Artifacts", "Logging", "Caching"],
+      "analytics": [
+        "EDA",
+        "Data insights"
+      ],
+      "mlops": [
+        "Config",
+        "Artifacts",
+        "Logging",
+        "Caching"
+      ],
       "github_url": "https://github.com/GouravGC/Predicting-30-Day-Hospital-Readmissions",
       "live_demo_url": null,
       "deployment_platform": null,
       "demo_verified": false,
-      "status": "Production-ready (no verified live URL)"
+      "status": "Production-ready (no verified live URL)",
+      "tier": "featured",
+      "deployment_status": "not_deployed",
+      "verified_live_demo": false
     },
     {
       "name": "HR Workforce Intelligence & Analytics Dashboard",
       "id": "hr-analytics-dashboard",
       "short_description": "End-to-end HR Analytics solution transforming raw employee data into actionable business intelligence using SQL, Python, Plotly, Power BI, and a Streamlit dashboard.",
-      "category": ["Data Analytics", "Business Intelligence", "Visualization", "SQL"],
+      "category": [
+        "Data Analytics",
+        "Business Intelligence",
+        "Visualization",
+        "SQL"
+      ],
       "featured": true,
       "problem_statement": "Provide HR teams with comprehensive analytics on workforce trends, demographics, compensation, promotions, diversity, and attrition.",
       "dataset": "HR Analytics dataset",
       "data_size": "Employee attributes (EmpID, Age, Department, MonthlyIncome, Attrition, etc.)",
-      "preprocessing": ["Data cleaning", "Feature engineering"],
+      "preprocessing": [
+        "Data cleaning",
+        "Feature engineering"
+      ],
       "feature_engineering": [],
       "models": [],
       "evaluation": [],
       "metrics": {},
       "explainability": [],
-      "deployment": ["Streamlit", "Streamlit Community Cloud"],
+      "deployment": [
+        "Streamlit",
+        "Streamlit Community Cloud"
+      ],
       "architecture": "Raw data -> SQL querying -> Python cleaning/analysis -> Plotly viz -> Streamlit dashboard -> Cloud",
-      "key_features": ["Interactive dashboard", "Employee demographics", "Compensation analysis", "Attrition deep dive", "Career progression", "Downloadable reports"],
-      "technical_highlights": ["SQL + Python + Plotly", "Power BI executive dashboard", "Actionable HR insights"],
-      "languages": ["Python", "SQL"],
-      "frameworks": ["SQLite"],
-      "libraries": ["Streamlit", "Pandas", "NumPy", "Plotly"],
-      "databases": ["SQLite"],
+      "key_features": [
+        "Interactive dashboard",
+        "Employee demographics",
+        "Compensation analysis",
+        "Attrition deep dive",
+        "Career progression",
+        "Downloadable reports"
+      ],
+      "technical_highlights": [
+        "SQL + Python + Plotly",
+        "Power BI executive dashboard",
+        "Actionable HR insights"
+      ],
+      "languages": [
+        "Python",
+        "SQL"
+      ],
+      "frameworks": [
+        "SQLite"
+      ],
+      "libraries": [
+        "Streamlit",
+        "Pandas",
+        "NumPy",
+        "Plotly"
+      ],
+      "databases": [
+        "SQLite"
+      ],
       "ml_algorithms": [],
       "deep_learning": [],
       "genai": [],
-      "analytics": ["Business intelligence", "EDA", "SQL analysis"],
-      "mlops": ["Artifacts"],
+      "analytics": [
+        "Business intelligence",
+        "EDA",
+        "SQL analysis"
+      ],
+      "mlops": [
+        "Artifacts"
+      ],
       "github_url": "https://github.com/GouravGC/HR_Analytics_Dashboard",
       "live_demo_url": "https://hranalyticsdashboard-gc.streamlit.app/",
       "deployment_platform": "Streamlit Community Cloud",
       "demo_verified": true,
-      "status": "Deployed"
+      "status": "Deployed",
+      "tier": "featured",
+      "deployment_status": "streamlit_cloud",
+      "verified_live_demo": true
     },
     {
       "name": "Sales Business Intelligence Dashboard",
       "id": "sales-bi-dashboard",
       "short_description": "Transforms raw sales data into actionable business intelligence using SQL (DuckDB), Python, Pandas, Plotly, Power BI, and Streamlit.",
-      "category": ["Data Analytics", "Business Intelligence", "Visualization", "SQL"],
+      "category": [
+        "Data Analytics",
+        "Business Intelligence",
+        "Visualization",
+        "SQL"
+      ],
       "featured": true,
       "problem_statement": "Provide a comprehensive analytical framework covering KPIs, trends, geographical and product performance, customer behavior, and the impact of discounts and shipping modes.",
       "dataset": "Sales dataset",
       "data_size": "Sales transactions (revenue, profit, orders)",
-      "preprocessing": ["Data cleaning", "Processing"],
+      "preprocessing": [
+        "Data cleaning",
+        "Processing"
+      ],
       "feature_engineering": [],
       "models": [],
       "evaluation": [],
       "metrics": {},
       "explainability": [],
-      "deployment": ["Streamlit", "Streamlit Community Cloud"],
+      "deployment": [
+        "Streamlit",
+        "Streamlit Community Cloud"
+      ],
       "architecture": "Data -> SQL (DuckDB) analysis -> Plotly visualizations -> Power BI -> Streamlit dashboard -> Cloud",
-      "key_features": ["SQL business analysis", "Power BI dashboard (.pbix) & PDF report", "Interactive KPI cards", "Time-series analysis", "Geographical analysis", "Product performance", "Data download"],
-      "technical_highlights": ["DuckDB SQL analytics", "Power BI executive report", "Interactive Plotly charts"],
-      "languages": ["Python", "SQL"],
-      "frameworks": ["DuckDB"],
-      "libraries": ["Streamlit", "Pandas", "Plotly", "openpyxl", "Kaleido"],
-      "databases": ["DuckDB"],
+      "key_features": [
+        "SQL business analysis",
+        "Power BI dashboard (.pbix) & PDF report",
+        "Interactive KPI cards",
+        "Time-series analysis",
+        "Geographical analysis",
+        "Product performance",
+        "Data download"
+      ],
+      "technical_highlights": [
+        "DuckDB SQL analytics",
+        "Power BI executive report",
+        "Interactive Plotly charts"
+      ],
+      "languages": [
+        "Python",
+        "SQL"
+      ],
+      "frameworks": [
+        "DuckDB"
+      ],
+      "libraries": [
+        "Streamlit",
+        "Pandas",
+        "Plotly",
+        "openpyxl",
+        "Kaleido"
+      ],
+      "databases": [
+        "DuckDB"
+      ],
       "ml_algorithms": [],
       "deep_learning": [],
       "genai": [],
-      "analytics": ["Business intelligence", "KPI analysis", "Time-series analysis"],
-      "mlops": ["Artifacts"],
+      "analytics": [
+        "Business intelligence",
+        "KPI analysis",
+        "Time-series analysis"
+      ],
+      "mlops": [
+        "Artifacts"
+      ],
       "github_url": "https://github.com/GouravGC/sales-business-intelligence-dashboard",
       "live_demo_url": "https://sales-business-intelligence-dashboard.streamlit.app/",
       "deployment_platform": "Streamlit Community Cloud",
       "demo_verified": true,
-      "status": "Deployed"
+      "status": "Deployed",
+      "tier": "featured",
+      "deployment_status": "streamlit_cloud",
+      "verified_live_demo": true
     },
     {
       "name": "Retail Demand Forecasting (Deep Learning MLP)",
       "id": "retail-demand-forecasting",
       "short_description": "An end-to-end deep learning MLP project that predicts retail demand forecasting using a tabular regression neural network.",
-      "category": ["Time Series", "Deep Learning", "Regression"],
+      "category": [
+        "Time Series",
+        "Deep Learning",
+        "Regression"
+      ],
       "featured": false,
       "problem_statement": "Predict retail demand using a deep learning MLP regression model.",
       "dataset": "Retail demand forecasting dataset",
       "data_size": "Tabular retail data",
-      "preprocessing": ["Feature scaling", "Data cleaning"],
+      "preprocessing": [
+        "Feature scaling",
+        "Data cleaning"
+      ],
       "feature_engineering": [],
-      "models": ["Deep Learning MLP"],
-      "evaluation": ["Regression metrics"],
+      "models": [
+        "Deep Learning MLP"
+      ],
+      "evaluation": [
+        "Regression metrics"
+      ],
       "metrics": {},
       "explainability": [],
       "deployment": [],
       "architecture": "Data -> preprocessing -> MLP regression -> predictions",
-      "key_features": ["Deep learning MLP regression"],
-      "technical_highlights": ["MLP for tabular regression", "End-to-end notebook workflow"],
-      "languages": ["Python"],
-      "frameworks": ["PyTorch"],
-      "libraries": ["pandas", "numpy"],
+      "key_features": [
+        "Deep learning MLP regression"
+      ],
+      "technical_highlights": [
+        "MLP for tabular regression",
+        "End-to-end notebook workflow"
+      ],
+      "languages": [
+        "Python"
+      ],
+      "frameworks": [
+        "PyTorch"
+      ],
+      "libraries": [
+        "pandas",
+        "numpy"
+      ],
       "databases": [],
       "ml_algorithms": [],
-      "deep_learning": ["MLP"],
+      "deep_learning": [
+        "MLP"
+      ],
       "genai": [],
-      "analytics": ["EDA"],
+      "analytics": [
+        "EDA"
+      ],
       "mlops": [],
       "github_url": "https://github.com/GouravGC/End-To-End-Retail_Demand_Forecasting-System",
-      "live_demo_url": null,
-      "deployment_platform": null,
-      "demo_verified": false,
-      "status": "Notebook-based"
+      "live_demo_url": "https://end-to-end-retaildemandforecasting-gc.streamlit.app/",
+      "deployment_platform": "Streamlit Community Cloud",
+      "demo_verified": true,
+      "status": "Deployed",
+      "tier": "experimental",
+      "deployment_status": "streamlit_cloud",
+      "verified_live_demo": true
     },
     {
       "name": "Basic Chatbot Application",
       "id": "basic-chatbot",
       "short_description": "A mini generative-AI chatbot application that accepts a prompt or query and returns an output.",
-      "category": ["Generative AI", "NLP"],
+      "category": [
+        "Generative AI",
+        "NLP"
+      ],
       "featured": false,
       "problem_statement": "Build a mini chatbot that responds to user prompts.",
       "dataset": null,
       "data_size": null,
       "preprocessing": [],
       "feature_engineering": [],
-      "models": ["LLM-based chatbot"],
+      "models": [
+        "LLM-based chatbot"
+      ],
       "evaluation": [],
       "metrics": {},
       "explainability": [],
-      "deployment": ["Streamlit"],
+      "deployment": [
+        "Streamlit"
+      ],
       "architecture": "Prompt -> LLM -> response",
-      "key_features": ["Prompt-based Q&A"],
-      "technical_highlights": ["Generative AI application"],
-      "languages": ["Python"],
+      "key_features": [
+        "Prompt-based Q&A"
+      ],
+      "technical_highlights": [
+        "Generative AI application"
+      ],
+      "languages": [
+        "Python"
+      ],
       "frameworks": [],
-      "libraries": ["Streamlit"],
+      "libraries": [
+        "Streamlit"
+      ],
       "databases": [],
       "ml_algorithms": [],
       "deep_learning": [],
-      "genai": ["LLM", "Chatbot"],
+      "genai": [
+        "LLM",
+        "Chatbot"
+      ],
       "analytics": [],
       "mlops": [],
       "github_url": "https://github.com/GouravGC/Basic-Chatbot-Application",
       "live_demo_url": null,
       "deployment_platform": null,
       "demo_verified": false,
-      "status": "Mini/experimental"
+      "status": "Mini/experimental",
+      "tier": "experimental",
+      "deployment_status": "not_deployed",
+      "verified_live_demo": false
     },
     {
       "name": "Mini ChatGPT",
       "id": "mini-chatgpt",
       "short_description": "A mini version of ChatGPT that gives output similar to ChatGPT given a prompt.",
-      "category": ["Generative AI", "NLP"],
+      "category": [
+        "Generative AI",
+        "NLP"
+      ],
       "featured": false,
       "problem_statement": "Build a mini chatbot that mimics ChatGPT-style responses.",
       "dataset": null,
       "data_size": null,
       "preprocessing": [],
       "feature_engineering": [],
-      "models": ["LLM-based chatbot"],
+      "models": [
+        "LLM-based chatbot"
+      ],
       "evaluation": [],
       "metrics": {},
       "explainability": [],
-      "deployment": ["Streamlit"],
+      "deployment": [
+        "Streamlit"
+      ],
       "architecture": "Prompt -> LLM -> response",
-      "key_features": ["Prompt-based Q&A"],
-      "technical_highlights": ["Generative AI application"],
-      "languages": ["Python"],
+      "key_features": [
+        "Prompt-based Q&A"
+      ],
+      "technical_highlights": [
+        "Generative AI application"
+      ],
+      "languages": [
+        "Python"
+      ],
       "frameworks": [],
-      "libraries": ["Streamlit"],
+      "libraries": [
+        "Streamlit"
+      ],
       "databases": [],
       "ml_algorithms": [],
       "deep_learning": [],
-      "genai": ["LLM", "Chatbot"],
+      "genai": [
+        "LLM",
+        "Chatbot"
+      ],
       "analytics": [],
       "mlops": [],
       "github_url": "https://github.com/GouravGC/Mini_Chatgpt",
       "live_demo_url": null,
       "deployment_platform": null,
       "demo_verified": false,
-      "status": "Mini/experimental"
+      "status": "Mini/experimental",
+      "tier": "experimental",
+      "deployment_status": "not_deployed",
+      "verified_live_demo": false
     },
     {
       "name": "Word Cloud App",
       "id": "word-cloud-app",
       "short_description": "An application to build a word cloud from any document.",
-      "category": ["Data Analytics", "Visualization", "NLP"],
+      "category": [
+        "Data Analytics",
+        "Visualization",
+        "NLP"
+      ],
       "featured": false,
       "problem_statement": "Generate a word cloud from user-provided documents.",
       "dataset": null,
       "data_size": null,
-      "preprocessing": ["Text cleaning"],
+      "preprocessing": [
+        "Text cleaning"
+      ],
       "feature_engineering": [],
       "models": [],
       "evaluation": [],
       "metrics": {},
       "explainability": [],
-      "deployment": ["Streamlit"],
+      "deployment": [
+        "Streamlit"
+      ],
       "architecture": "Document -> text processing -> word cloud",
-      "key_features": ["Word cloud generation from documents"],
-      "technical_highlights": ["Text visualization"],
-      "languages": ["Python"],
+      "key_features": [
+        "Word cloud generation from documents"
+      ],
+      "technical_highlights": [
+        "Text visualization"
+      ],
+      "languages": [
+        "Python"
+      ],
       "frameworks": [],
-      "libraries": ["Streamlit", "wordcloud"],
+      "libraries": [
+        "Streamlit",
+        "wordcloud"
+      ],
       "databases": [],
       "ml_algorithms": [],
       "deep_learning": [],
       "genai": [],
-      "analytics": ["Text analytics"],
+      "analytics": [
+        "Text analytics"
+      ],
       "mlops": [],
       "github_url": "https://github.com/GouravGC/word_cloud_app",
       "live_demo_url": null,
       "deployment_platform": null,
       "demo_verified": false,
-      "status": "Mini/experimental"
+      "status": "Mini/experimental",
+      "tier": "experimental",
+      "deployment_status": "not_deployed",
+      "verified_live_demo": false
     },
     {
       "name": "Basic Stock Market App",
       "id": "basic-stock-market-app",
       "short_description": "A mini stock market application that provides analysis and predictions by selecting a few details.",
-      "category": ["Data Analytics", "Time Series"],
+      "category": [
+        "Data Analytics",
+        "Time Series"
+      ],
       "featured": false,
       "problem_statement": "Provide stock analysis and predictions from selected stock details.",
       "dataset": null,
@@ -746,24 +1753,40 @@
       "evaluation": [],
       "metrics": {},
       "explainability": [],
-      "deployment": ["Streamlit"],
+      "deployment": [
+        "Streamlit"
+      ],
       "architecture": "Stock selection -> analysis -> prediction",
-      "key_features": ["Stock analysis & prediction"],
-      "technical_highlights": ["Financial data application"],
-      "languages": ["Python"],
+      "key_features": [
+        "Stock analysis & prediction"
+      ],
+      "technical_highlights": [
+        "Financial data application"
+      ],
+      "languages": [
+        "Python"
+      ],
       "frameworks": [],
-      "libraries": ["Streamlit", "yfinance"],
+      "libraries": [
+        "Streamlit",
+        "yfinance"
+      ],
       "databases": [],
       "ml_algorithms": [],
       "deep_learning": [],
       "genai": [],
-      "analytics": ["Financial analytics"],
+      "analytics": [
+        "Financial analytics"
+      ],
       "mlops": [],
       "github_url": "https://github.com/GouravGC/Basic_stock_market_app",
       "live_demo_url": null,
       "deployment_platform": null,
       "demo_verified": false,
-      "status": "Mini/experimental"
+      "status": "Mini/experimental",
+      "tier": "experimental",
+      "deployment_status": "not_deployed",
+      "verified_live_demo": false
     }
   ]
 }

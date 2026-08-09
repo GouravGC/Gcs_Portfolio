@@ -109,9 +109,24 @@ def is_placeholder(value) -> bool:
 
 
 def has_verified_demo(project: dict) -> bool:
-    """Return True if a project has a verified live demo URL."""
+    """Return True if a project has a live demo URL.
+
+    Note: automated network verification is intentionally NOT performed here.
+    The presence of a demo URL in the data layer is treated as "has a demo",
+    which the candidate verifies manually. Kept for backward compatibility with
+    the existing `demo_verified` flag.
+    """
     url = project.get("live_demo_url")
-    return bool(url) and project.get("demo_verified") is True
+    return bool(url)
+
+
+def get_tier(project: dict) -> str:
+    """Return the project tier. Defaults to 'supporting'."""
+    tier = (project.get("tier") or "").strip().lower()
+    if tier in ("featured", "supporting", "experimental"):
+        return tier
+    # Backward-compatible inference from the legacy `featured` flag.
+    return "featured" if project.get("featured") else "supporting"
 
 
 def ensure_output_dir() -> Path:

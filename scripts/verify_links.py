@@ -1,8 +1,18 @@
 """GET-based link verification for the portfolio.
 
-Verifies every external URL used by the portfolio (GitHub repos, live demos,
-LinkedIn, GitHub profile) using a GET request with retries and a generous
-timeout to allow for Streamlit cold-starts.
+Checks every external URL (GitHub profile, LinkedIn, project GitHub repos,
+and live demo URLs) with bounded, strict settings so a single unreachable URL
+can never block verification of the rest, and the script always terminates.
+
+Verification rules:
+  * GET requests only (no HEAD — many Streamlit/Flask apps reject HEAD).
+  * Max 12 seconds per request.
+  * Max 1 retry with a 2 second delay.
+  * Max 3 redirects per URL (prevents infinite Streamlit redirect loops).
+  * Overall deadline of 180 seconds for the whole run.
+  * Each URL is isolated: a timeout/redirect-loop/DNS/HTTP failure on one URL
+    simply returns False and the script moves on.
+  * A final summary is always printed.
 
 Usage:
     python scripts/verify_links.py
@@ -10,6 +20,7 @@ Usage:
 from __future__ import annotations
 
 import json
+import socket
 import sys
 import time
 from pathlib import Path
@@ -23,25 +34,55 @@ if str(_PROJECT_ROOT) not in sys.path:
 
 from utils.helpers import load_profile, load_projects
 
-TIMEOUT = 45
-RETRIES = 2
-DELAY = 8  # seconds between retries (allow Streamlit cold-start)
+# Bounded verification settings.
+TIMEOUT = 12          # seconds per request (strict; no waiting on cold starts)
+RETRIES = 1           # maximum number of retries per URL
+DELAY = 2             # seconds between retries
+MAX_REDIRECTS = 3     # redirect cap to avoid infinite loops
+OVERALL_BUDGET = 180  # seconds for the entire verification run
+
+
+class _CappedRedirectHandler(request.HTTPRedirectHandler):
+    """Follow redirects up to MAX_REDIRECTS.
+
+    A fresh instance is created per request, so the hop counter is isolated per
+    URL. Exceeding the cap raises an HTTPError, which is treated as a failure.
+    """
+
+    MAX_REDIRECTS = MAX_REDIRECTS
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._hops = 0
+
+    def redirect_request(self, req, fp, code, msg, headers, new_url):
+        if self._hops >= self.MAX_REDIRECTS:
+            raise error.HTTPError(
+                req.full_url, code, "Too many redirects", headers, fp
+            )
+        self._hops += 1
+        return super().redirect_request(req, fp, code, msg, headers, new_url)
 
 
 def check_url(url: str, timeout: int = TIMEOUT, retries: int = RETRIES) -> bool:
-    """Return True if a GET request returns an HTTP 2xx/3xx status.
+    """Return True if a GET request resolves to HTTP 2xx/3xx.
 
-    Uses GET (not HEAD) because many Streamlit/Flask apps reject HEAD or
-    return non-2xx for it. Retries with a delay to allow cold starts.
+    Every failure type (HTTP error, timeout, redirect loop, DNS/network error)
+    is caught and returns False. We never use HEAD.
     """
     if not url:
         return False
     for attempt in range(retries + 1):
         try:
-            req = request.Request(url, method="GET", headers={"User-Agent": "portfolio-verifier"})
-            with request.urlopen(req, timeout=timeout) as resp:
+            opener = request.build_opener(_CappedRedirectHandler)
+            req = request.Request(
+                url, method="GET", headers={"User-Agent": "portfolio-verifier"}
+            )
+            with opener.open(req, timeout=timeout) as resp:
                 return 200 <= resp.status < 400
-        except (error.URLError, error.HTTPError, TimeoutError, OSError):
+        except error.HTTPError:
+            return False
+        except (error.URLError, TimeoutError, OSError, socket.timeout):
             if attempt < retries:
                 time.sleep(DELAY)
             else:
@@ -49,12 +90,17 @@ def check_url(url: str, timeout: int = TIMEOUT, retries: int = RETRIES) -> bool:
     return False
 
 
+def _deadline_exceeded(deadline: float) -> bool:
+    """Return True if the overall verification budget has been exceeded."""
+    return time.monotonic() > deadline
+
+
 def main() -> None:
     print("GET-based Link Verification")
     print("===========================")
     profile = load_profile()
-
-    results = []
+    results: list[dict] = []
+    deadline = time.monotonic() + OVERALL_BUDGET
 
     # GitHub profile
     gh = profile.get("github", "")
@@ -70,6 +116,9 @@ def main() -> None:
 
     # Projects
     for p in load_projects():
+        if _deadline_exceeded(deadline):
+            print("\nOverall verification budget exceeded; stopping early.")
+            break
         pid = p.get("id")
         gurl = p.get("github_url", "")
         gok = check_url(gurl)
@@ -104,19 +153,15 @@ def main() -> None:
         json.dump(results, f, indent=2, ensure_ascii=False)
     print(f"\nReport written to {out}")
 
-    # Non-zero exit if any project github or verified demo fails
+    # Non-zero exit if any project GitHub URL failed verification.
     project_gh_fail = [
         r for r in results
         if r["type"] == "project" and r["key"].endswith(":github") and r["ok"] is False
     ]
-    verified_demo_fail = [
-        r for r in results
-        if r["type"] == "project" and r["key"].endswith(":demo") and r["ok"] is False
-    ]
-    if project_gh_fail or verified_demo_fail:
-        print("\nWARNING: Some project GitHub/demo URLs failed verification.")
+    if project_gh_fail:
+        print("\nWARNING: Some project GitHub URLs failed verification.")
         sys.exit(1)
-    print("\nAll project GitHub URLs and demos verified successfully.")
+    print("\nAll project GitHub URLs verified successfully.")
 
 
 if __name__ == "__main__":

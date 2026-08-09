@@ -5,7 +5,8 @@ import streamlit as st
 
 from components.footer import render_footer
 from components.navbar import render_navbar
-from components.ui import btn_link, info_note, section_header
+from components.project_card import project_card
+from components.ui import info_note, section_header
 from utils.helpers import has_verified_demo, load_projects
 
 st.set_page_config(page_title="Deployment | Gourav Chhatwani", page_icon="🚀", layout="wide")
@@ -34,20 +35,14 @@ for i, (plat, count) in enumerate(sorted(platform_counts.items())):
 st.markdown("---")
 section_header(
     "Deployed Projects",
-    "Only projects with a verified live demo URL are shown as deployed.",
+    "Projects that declare a deployment platform and/or live demo URL.",
 )
 
 if deployed:
     cols = st.columns(2)
     for i, p in enumerate(deployed):
         with cols[i % 2]:
-            st.markdown(f'<div class="gc-card">', unsafe_allow_html=True)
-            st.markdown(f"### {p.get('name')}")
-            st.markdown(f"**Platform:** {p.get('deployment_platform')}")
-            if has_verified_demo(p):
-                btn_link("Live Demo", p.get("live_demo_url"), variant="accent")
-            btn_link("GitHub", p.get("github_url"), variant="outline")
-            st.markdown("</div>", unsafe_allow_html=True)
+            project_card(p)
 else:
     info_note("No deployed projects found.", tone="amber")
 

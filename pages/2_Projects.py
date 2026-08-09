@@ -8,6 +8,7 @@ from components.navbar import render_navbar
 from components.project_card import project_card
 from components.ui import info_note, section_header
 from utils.helpers import (
+    get_tier,
     list_categories,
     list_deployment_platforms,
     list_technologies,
@@ -23,39 +24,39 @@ section_header(
     "Search, filter, and explore the full portfolio of verified projects.",
 )
 
-# Filters sidebar section
+# ---- Filters sidebar ----
 st.sidebar.markdown("### Project Filters")
-
 search = st.sidebar.text_input("Search", placeholder="e.g. fraud, pytorch, sales…")
 
-cats = list_categories(projects)
-sel_cats = st.sidebar.multiselect("Categories", cats)
+tier_options = ["All tiers", "Featured", "Supporting", "Experimental"]
+sel_tier = st.sidebar.selectbox("Tier", tier_options)
+
+cats = ["All categories"] + list_categories(projects)
+sel_cat = st.sidebar.selectbox("Category", cats)
 
 techs = list_technologies(projects)
 sel_techs = st.sidebar.multiselect("Technologies", techs)
 
-platforms = list_deployment_platforms(projects)
-sel_platforms = st.sidebar.multiselect("Deployment", platforms)
+platforms = ["All deployments"] + list_deployment_platforms(projects)
+sel_platform = st.sidebar.selectbox("Deployment Platform", platforms)
 
-show_only_featured = st.sidebar.checkbox("Featured only", value=False)
-show_only_deployed = st.sidebar.checkbox("Deployed (verified demo) only", value=False)
+deployed_only = st.sidebar.checkbox("Deployed (has live demo URL) only", value=False)
 
-# Apply filters
+# ---- Apply filters ----
 filtered = []
 for p in projects:
-    if show_only_featured and not p.get("featured"):
+    if sel_tier != "All tiers" and get_tier(p) != sel_tier.lower():
         continue
-    if show_only_deployed and not p.get("live_demo_url"):
+    if sel_cat != "All categories" and sel_cat not in p.get("category", []):
         continue
-    if sel_cats and not any(c in sel_cats for c in p.get("category", [])):
+    if deployed_only and not p.get("live_demo_url"):
         continue
+    if sel_platform != "All deployments":
+        if p.get("deployment_platform") != sel_platform:
+            continue
     if sel_techs:
         p_techs = set(p.get("languages", []) + p.get("frameworks", []) + p.get("libraries", []))
         if not any(t in p_techs for t in sel_techs):
-            continue
-    if sel_platforms:
-        dp = p.get("deployment_platform")
-        if dp not in sel_platforms:
             continue
     if search:
         haystack = " ".join(
@@ -78,16 +79,19 @@ if not filtered:
     info_note("No projects match the current filters. Try adjusting your selections.", tone="amber")
 else:
     # Order featured first, then by name
-    filtered.sort(key=lambda x: (not x.get("featured"), x.get("name", "")))
+    tier_rank = {"featured": 0, "supporting": 1, "experimental": 2}
+    filtered.sort(key=lambda x: (tier_rank.get(get_tier(x), 1), x.get("name", "")))
+    st.markdown('<div class="gc-anim-stagger">', unsafe_allow_html=True)
     cols = st.columns(2)
     for i, proj in enumerate(filtered):
         with cols[i % 2]:
             project_card(proj)
+    st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("---")
 st.caption(
-    "Live Demo buttons appear only for projects with a verified deployment URL. "
-    "Projects without a verified demo are clearly marked."
+    "Live Demo buttons appear for projects that provide a deployment URL. "
+    "Projects without a demo URL are clearly marked."
 )
 
 render_footer()

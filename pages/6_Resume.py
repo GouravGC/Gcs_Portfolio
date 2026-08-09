@@ -1,7 +1,7 @@
-"""Resume page — download the master resume.
+"""Resume page — view and download the master resume.
 
 The resume is generated from the same structured data (profile.json + projects.json)
-via resume/generate_resume.py. This page links to the generated DOCX/PDF.
+via resume/generate_resume.py. This page lets the user view and download the PDF/DOCX.
 """
 from __future__ import annotations
 
@@ -45,13 +45,35 @@ for fname in resume_names:
             mime=mime,
         )
 
+# In-app PDF preview (View Resume) if present
+pdf_path = OUTPUT_DIR / "Gourav_Chhatwani_Master_Resume.pdf"
+if pdf_path.exists():
+    st.markdown("### Preview")
+    st.markdown("📄 **View Resume** — full preview below.")
+    with open(pdf_path, "rb") as f:
+        pdf_bytes = f.read()
+    st.download_button(
+        label="Open PDF",
+        data=pdf_bytes,
+        file_name=pdf_path.name,
+        mime="application/pdf",
+    )
+    try:
+        import base64
+
+        b64 = base64.b64encode(pdf_bytes).decode()
+        st.markdown(
+            f'<iframe src="data:application/pdf;base64,{b64}" width="100%" '
+            f'style="height:80vh; border:1px solid rgba(255,255,255,.1); border-radius:12px;"></iframe>',
+            unsafe_allow_html=True,
+        )
+    except Exception:
+        st.info("Inline PDF preview is unavailable in this environment. Use the Download buttons above.")
+
 st.markdown("---")
 
 st.markdown("### Generate / Regenerate the Resume")
-st.code(
-    "python resume/generate_resume.py",
-    language="bash",
-)
+st.code("python resume/generate_resume.py", language="bash")
 info_note(
     "The DOCX is generated with python-docx from data/profile.json and data/projects.json. "
     "PDF generation occurs automatically when a reliable ODF/LibreOffice conversion is available. "

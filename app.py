@@ -11,7 +11,7 @@ from components.metrics import render_portfolio_metrics
 from components.navbar import render_navbar, render_page_selector
 from components.project_card import project_card
 from components.ui import btn_link, render_hero, section_header
-from utils.helpers import has_verified_demo, load_profile, load_projects
+from utils.helpers import get_tier, load_profile, load_projects
 
 st.set_page_config(
     page_title="Gourav Chhatwani | Data Scientist & AI/ML Engineer",
@@ -26,22 +26,32 @@ render_page_selector()
 profile = load_profile()
 projects = load_projects()
 
+HERO_TAGS = [
+    "📊 Data Analytics",
+    "🤖 Machine Learning",
+    "🧠 Deep Learning",
+    "✨ Generative AI",
+    "🚀 Deployment",
+    "⚙️ MLOps",
+]
+
 render_hero(
     name=profile["name"],
     title=profile["professional_title"],
     summary=profile["summary"],
+    tags=HERO_TAGS,
 )
 
-# Action buttons
+# Action buttons — every button must work.
 c1, c2, c3, c4 = st.columns(4)
 with c1:
-    st.page_link("pages/6_Resume.py", label="Download Resume", icon="📄")
+    st.page_link("pages/6_Resume.py", label="📄 Download Resume")
 with c2:
-    btn_link("GitHub", profile["github"], variant="outline")
+    btn_link("GitHub", profile["github"], variant="primary")
 with c3:
     btn_link("LinkedIn", profile["linkedin"], variant="outline")
 with c4:
-    st.page_link("pages/2_Projects.py", label="Explore Projects", icon="📁")
+    st.page_link("pages/2_Projects.py", label="🛠 View Projects")
 
 st.markdown("---")
 
@@ -57,7 +67,7 @@ section_header(
     "Production-oriented projects spanning analytics, ML, deep learning, time series, recommendations, and deployment.",
 )
 
-featured = [p for p in projects if p.get("featured")]
+featured = [p for p in projects if get_tier(p) == "featured"]
 if featured:
     cols = st.columns(2)
     for i, proj in enumerate(featured[:8]):
@@ -85,6 +95,6 @@ with c2:
 
 st.markdown("---")
 st.caption(
-    "Note: This portfolio presents verified project information from the candidate's "
-    "public GitHub. Personal details that could not be verified are shown as placeholders."
+    "Built from the candidate's public GitHub. Live Demo buttons appear for projects "
+    "that provide a deployment URL. All external links are manually verified by the candidate."
 )
