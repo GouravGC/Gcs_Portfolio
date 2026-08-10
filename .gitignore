@@ -16,8 +16,6 @@ env/
 
 # Resume outputs
 resume/output/
-*.docx
-*.pdf
 
 # Streamlit
 .streamlit/secrets.toml
