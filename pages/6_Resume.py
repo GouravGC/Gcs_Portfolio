@@ -16,6 +16,9 @@ st.set_page_config(page_title="Resume | Gourav Chhatwani", page_icon="📄", lay
 render_navbar()
 
 profile = load_profile()
+st.info(
+    "This portfolio contains a dedicated digital resume app: run `streamlit run resume.py` in the project root to open the premium resume at a separate port (e.g. `--server.port 8502`).",
+)
 section_header(
     "Master Resume",
     "A professional, ATS-friendly resume generated from the same structured candidate data as this portfolio.",

@@ -1,0 +1,48 @@
+{
+  "name": "Gourav Chhatwani",
+  "title": "Data Scientist | AI/ML Engineer",
+  "summary": "Data Scientist and AI/ML Engineer with hands-on experience building end-to-end machine learning, deep learning, analytics, computer vision, time-series forecasting, and Generative AI applications. Experienced in developing modular, production-oriented applications using Python, SQL, PyTorch, TensorFlow, Scikit-learn, Streamlit, Flask, FastAPI, Docker, MLflow, and cloud deployment platforms. Currently expanding into Generative AI with RAG, embeddings, vector databases, LangChain, and LLM-based applications.",
+  "email": "Chhatwanigourav@gmail.com",
+  "phone": "7412841464",
+  "location": "Jaipur, Rajasthan, India",
+  "github": "https://github.com/GouravGC",
+  "linkedin": "https://www.linkedin.com/in/gourav-chhatwani-9a301134a/",
+  "portfolio": "https://gcsportfolio.streamlit.app/",
+  "featured_project_ids": [
+    "student-academic-outcome-prediction",
+    "animal-10-classification",
+    "human-activity-recognition",
+    "loan-default-predictor",
+    "retail-data-warehouse-analytics",
+    "concrete-strength-predictor",
+    "market-basket-analysis"
+  ],
+  "additional_project_ids": [
+    "fraud-detection",
+    "electricity-forecasting-rnn",
+    "customer-segmentation",
+    "insurance-cross-sell",
+    "hospital-readmissions",
+    "hr-analytics-dashboard",
+    "sales-bi-dashboard",
+    "customer-churn-prediction",
+    "student-performance-predictor"
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Computer Applications (BCA)",
+      "institution": "Sanskriti College",
+      "university": "University of Rajasthan",
+      "location": "Jaipur, Rajasthan",
+      "year_start": "2022",
+      "year_end": "2024"
+    },
+    {
+      "degree": "Senior Secondary (Commerce with IP)",
+      "institution": "Tilak Public School",
+      "board": "CBSE",
+      "location": "Jaipur, Rajasthan",
+      "passing_year": "2021"
+    }
+  ]
+}

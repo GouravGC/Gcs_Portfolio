@@ -1,4 +1,117 @@
 {
-  "certifications": [],
-  "note": "Certifications have not yet been verified. Add verified certification entries here with {name, issuer, year, credential_url}. Until then, the resume and portfolio will gracefully omit or mark this section as pending."
+  "certifications": [
+    {
+      "name": "Applied Data Science Lab",
+      "issuer": "WorldQuant University",
+      "file": "Certifications/AppliedDataScienceLab20251129-31-eq4tlr.pdf",
+      "files": [
+        "Certifications/AppliedDataScienceLab20251129-31-eq4tlr.pdf"
+      ],
+      "type": "pdf",
+      "verified": true
+    },
+    {
+      "name": "Data Analytics Bootcamp",
+      "issuer": "Alexander Freberg",
+      "file": "Certifications/Data Analytics Bootcamp Certification of Alex.pdf",
+      "files": [
+        "Certifications/Data Analytics Bootcamp Certification of Alex.pdf",
+        "Certifications/Data Analytics Bootcamp Certification of Completion.png"
+      ],
+      "type": "pdf + png",
+      "verified": true
+    },
+    {
+      "name": "Career Essentials in Data Analysis",
+      "issuer": "Microsoft + LinkedIn",
+      "file": "Certifications/Career Essentials in Data Analysis by Microsoft and LinkedIn.pdf",
+      "files": [
+        "Certifications/Career Essentials in Data Analysis by Microsoft and LinkedIn.pdf"
+      ],
+      "type": "pdf",
+      "verified": true
+    },
+    {
+      "name": "What Is Generative AI",
+      "issuer": "Unknown issuer",
+      "file": "Certifications/CertificateOfCompletion_What Is Generative AI.pdf",
+      "files": [
+        "Certifications/CertificateOfCompletion_What Is Generative AI.pdf"
+      ],
+      "type": "pdf",
+      "verified": true
+    },
+    {
+      "name": "Data Science",
+      "issuer": "Cisco",
+      "file": "Certifications/Cisco Data scince (1).pdf",
+      "files": [
+        "Certifications/Cisco Data scince (1).pdf",
+        "Certifications/Cisco Data scince (2).pdf"
+      ],
+      "type": "pdf",
+      "verified": true
+    },
+    {
+      "name": "Data Analytics",
+      "issuer": "Simplilearn",
+      "file": "Certifications/Introduction to data analytics simplilearn.pdf",
+      "files": [
+        "Certifications/Introduction to data analytics simplilearn.pdf"
+      ],
+      "type": "pdf",
+      "verified": true
+    },
+    {
+      "name": "MySQL",
+      "issuer": "Simplilearn",
+      "file": "Certifications/mysql simplilearn certificate.pdf",
+      "files": [
+        "Certifications/mysql simplilearn certificate.pdf"
+      ],
+      "type": "pdf",
+      "verified": true
+    },
+    {
+      "name": "Power BI",
+      "issuer": "Simplilearn",
+      "file": "Certifications/Power Bi Simpli Learn.pdf",
+      "files": [
+        "Certifications/Power Bi Simpli Learn.pdf"
+      ],
+      "type": "pdf",
+      "verified": true
+    },
+    {
+      "name": "Python for Beginners",
+      "issuer": "Simplilearn",
+      "file": "Certifications/python for beginners simplilearn.pdf",
+      "files": [
+        "Certifications/python for beginners simplilearn.pdf"
+      ],
+      "type": "pdf",
+      "verified": true
+    },
+    {
+      "name": "Flutter",
+      "issuer": "Simplilearn",
+      "file": "Certifications/Introduction to flutter course simplilearn.pdf",
+      "files": [
+        "Certifications/Introduction to flutter course simplilearn.pdf"
+      ],
+      "type": "pdf",
+      "verified": true
+    },
+    {
+      "name": "Software Testing",
+      "issuer": "Simplilearn",
+      "file": "Certifications/Introduction to Software Testing Simplilearn.pdf",
+      "files": [
+        "Certifications/Introduction to Software Testing Simplilearn.pdf"
+      ],
+      "type": "pdf",
+      "verified": true
+    }
+  ],
+  "note": "This file inventories all certificate assets discovered in the repository. Duplicate-looking files are grouped when they appear to be alternate assets for the same certificate family."
 }
