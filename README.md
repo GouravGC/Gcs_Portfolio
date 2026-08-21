@@ -19,8 +19,7 @@ rewriting any UI code.
 
 This portfolio is deployed using Streamlit Cloud:
 
-🔗 **GC'S Portfolio:**  
-https://gcsportfolio.streamlit.app/ (Live Demo Note: The Streamlit Community Cloud app may be asleep due to inactivity. If prompted, click “Yes, get this app back up!” and wait a few seconds for the app to load.)
+🔗 **GC'S Portfolio:**  https://gcsportfolio.streamlit.app/ (Live Demo Note: The Streamlit Community Cloud app may be asleep due to inactivity. If prompted, click “Yes, get this app back up!” and wait a few seconds for the app to load.)
 
 ---
 
