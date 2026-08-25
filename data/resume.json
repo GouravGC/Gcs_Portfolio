@@ -15,7 +15,8 @@
     "loan-default-predictor",
     "retail-data-warehouse-analytics",
     "concrete-strength-predictor",
-    "market-basket-analysis"
+    "market-basket-analysis",
+    "vehicle-damage-detection-yolo11n"
   ],
   "additional_project_ids": [
     "fraud-detection",
