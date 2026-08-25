@@ -1,6 +1,124 @@
 {
   "projects": [
     {
+      "name": "Vehicle Damage Detection — YOLO11n",
+      "id": "vehicle-damage-detection-yolo11n",
+      "short_description": "End-to-end computer vision application for detecting and localizing six categories of visible vehicle damage using YOLO11n, with modular inference, visualization, evaluation, and Streamlit deployment.",
+      "category": [
+        "Computer Vision",
+        "Deep Learning",
+        "Deployment"
+      ],
+      "featured": true,
+      "problem_statement": "Detect and localize visible vehicle damage from images using a trained YOLO11n object detection model in a reusable and deployable inference application.",
+      "dataset": "Kaggle-sourced vehicle damage detection dataset",
+      "data_size": "Annotated vehicle image dataset",
+      "preprocessing": [
+        "Image validation",
+        "YOLO image preprocessing"
+      ],
+      "feature_engineering": [],
+      "models": [
+        "YOLO11n"
+      ],
+      "evaluation": [
+        "Precision",
+        "Recall",
+        "mAP@50",
+        "mAP@50–95"
+      ],
+      "metrics": {
+        "Precision": "71.36%",
+        "Recall": "67.69%",
+        "mAP@50": "71.35%",
+        "mAP@50–95": "56.53%"
+      },
+      "explainability": [],
+      "deployment": [
+        "Streamlit",
+        "Streamlit Community Cloud"
+      ],
+      "architecture": "Image Upload → Image Validation → YOLO11n Inference → Confidence Filtering → Structured Detections → Bounding-Box Visualization → Streamlit",
+      "key_features": [
+        "Six vehicle damage classes",
+        "YOLO11n object detection",
+        "Modular inference pipeline",
+        "Image validation",
+        "Confidence filtering",
+        "Bounding-box visualization",
+        "Structured detection results",
+        "Model evaluation",
+        "Automated testing",
+        "Multi-page Streamlit application"
+      ],
+      "technical_highlights": [
+        "Production-oriented modular architecture",
+        "Centralized configuration",
+        "Application logging",
+        "Custom exception handling",
+        "Reusable model interface",
+        "Inference-only deployment",
+        "PyTorch and Ultralytics",
+        "Streamlit Community Cloud deployment"
+      ],
+      "languages": [
+        "Python"
+      ],
+      "frameworks": [
+        "PyTorch",
+        "Ultralytics"
+      ],
+      "libraries": [
+        "Streamlit",
+        "OpenCV",
+        "Pillow",
+        "NumPy"
+      ],
+      "databases": [],
+      "ml_algorithms": [],
+      "deep_learning": [
+        "YOLO11n",
+        "Object Detection"
+      ],
+      "genai": [],
+      "analytics": [
+        "Model Evaluation",
+        "Inference Analytics"
+      ],
+      "mlops": [
+        "Modular Architecture",
+        "Configuration",
+        "Logging",
+        "Exception Handling",
+        "Testing",
+        "Deployment"
+      ],
+      "github_url": "https://github.com/GouravGC/Vehicle_Damage_Detector_Computer_Vision",
+      "live_demo_url": "https://vehicledamagedetectorcomputervision.streamlit.app/",
+      "deployment_platform": "Streamlit Community Cloud",
+      "demo_verified": true,
+      "status": "Deployed",
+      "tier": "featured",
+      "deployment_status": "streamlit_cloud",
+      "verified_live_demo": true,
+      "domains": [
+        "Machine Learning",
+        "Supervised Learning",
+        "Deep Learning",
+        "Computer Vision"
+      ],
+      "primary_domain": "Deep Learning",
+      "subcategory": "Computer Vision",
+      "secondary_tags": [
+        "YOLO11n",
+        "Object Detection",
+        "PyTorch",
+        "Ultralytics",
+        "Streamlit",
+        "Deployment"
+      ]
+    },
+    {
       "name": "Student Dropout & Academic Success Prediction",
       "id": "student-academic-outcome-prediction",
       "short_description": "Production-ready deep learning system to predict student dropout risk using a modular PyTorch architecture, SHAP explainability, and an interactive Streamlit app.",
